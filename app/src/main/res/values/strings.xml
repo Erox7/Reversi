@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Reversi</string>
+    <string name="HiddenText">Alias jugador</string>
+    <string name="HelpButton">Ajuda</string>
+    <string name="StartButton">Començar Partida</string>
+    <string name="ExitButton">Sortir</string>
+    <string name="greetings">Benvinguts al joc del REVERSI ! \n</string>
+    <string name="howToPlay">Hola</string>
+    <string name="backButton">Anar al Joc</string>
+    <string name="alias">Alias Identificatiu</string>
+    <string name="midaGrae">Mida Graella</string>
+    <string name="StartButton2">Començar</string>
+    <string name="state">PARTIDA EN MARXA</string>
+    <string name="results">RESULTATS PARTIDA</string>
+    <string name="dia">Dia y hora</string>
+    <string name="Log">Valors del Log</string>
+    <string name="email">E-mail Destinatari</string>
+    <string name="newGame">Nova Partida</string>
+    <string name="sendmail">Enviar e-mail</string>
+</resources>
