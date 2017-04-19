@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:2:1-32:12
+ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:2:1-39:12
 	package
 		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:3:5-39
 		INJECTED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml
@@ -14,7 +14,7 @@ ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest
 		INJECTED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml
 		INJECTED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml
 application
-ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:5:5-30:19
+ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:5:5-37:19
 MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\Erox\.android\build-cache\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\output\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-v4:25.2.0] C:\Users\Erox\.android\build-cache\2b529dc8a3aaea56530bf69077de12c2ede6cf52\output\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\Erox\.android\build-cache\8809599ccb6b2dcc94faa08c2242b125c6e78656\output\AndroidManifest.xml:25:5-20
@@ -68,13 +68,21 @@ ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest
 	android:name
 		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:25:13-43
 activity#com.example.erox.reversi.DesarrolloActivity
-ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:28:9-56
+ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:29:9-31:41
+	android:label
+		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:31:13-39
+	android:icon
+		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:30:13-41
 	android:name
-		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:28:19-53
+		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:29:19-53
 activity#com.example.erox.reversi.ResultsActivity
-ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:29:9-62
+ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:33:9-36:20
+	android:label
+		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:35:13-39
+	android:icon
+		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:34:13-41
 	android:name
-		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:29:19-50
+		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:33:19-50
 uses-sdk
 INJECTED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\Erox\.android\build-cache\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\output\AndroidManifest.xml:21:5-23:78

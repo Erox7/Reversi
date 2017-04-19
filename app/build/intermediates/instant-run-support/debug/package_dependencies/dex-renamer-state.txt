@@ -1,4 +1,4 @@
-#Tue Apr 18 17:52:57 CEST 2017
+#Wed Apr 19 22:49:31 CEST 2017
 file.2=D\:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_022e8c60c2bbc14fe63fff54e11593904ada4d59\\classes.dex
 base.2=D\:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_022e8c60c2bbc14fe63fff54e11593904ada4d59
 file.1=D\:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_c35de0867c088aa857706ea846449b46c25526d9\\classes.dex

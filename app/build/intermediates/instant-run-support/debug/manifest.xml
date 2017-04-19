@@ -26,15 +26,19 @@
         <activity
             android:name="com.example.erox.reversi.HelpActivity"
             android:icon="@drawable/ahri"
-            android:label="AYUDA" >
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
+            android:label="AYUDA" />
         <activity
             android:name="com.example.erox.reversi.ConfigActivity"
             android:icon="@drawable/set"
-            android:label="CONFIGURASION" >
+            android:label="CONFIGURACION" />
+        <activity
+            android:name="com.example.erox.reversi.DesarrolloActivity"
+            android:icon="@drawable/set"
+            android:label="DESARROLLO" />
+        <activity
+            android:name="com.example.erox.reversi.ResultsActivity"
+            android:icon="@drawable/set"
+            android:label="RESULTADOS" >
         </activity>
 
         <service

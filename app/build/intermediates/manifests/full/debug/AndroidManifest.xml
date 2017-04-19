@@ -31,8 +31,15 @@
             android:name="com.example.erox.reversi.ConfigActivity"
             android:icon="@drawable/set"
             android:label="CONFIGURACION" />
-        <activity android:name="com.example.erox.reversi.DesarrolloActivity" />
-        <activity android:name="com.example.erox.reversi.ResultsActivity" />
+        <activity
+            android:name="com.example.erox.reversi.DesarrolloActivity"
+            android:icon="@drawable/set"
+            android:label="DESARROLLO" />
+        <activity
+            android:name="com.example.erox.reversi.ResultsActivity"
+            android:icon="@drawable/set"
+            android:label="RESULTADOS" >
+        </activity>
     </application>
 
 </manifest>

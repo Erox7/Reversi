@@ -8,36 +8,20 @@
         "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable\\abc_ratingbar_material.xml"
     },
     {
-        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_edit_text_material.xml",
-        "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable\\abc_edit_text_material.xml"
+        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\mail.png",
+        "source": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\src\\main\\res\\drawable\\mail.png"
     },
     {
         "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\riven.png",
         "source": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\src\\main\\res\\drawable\\riven.png"
     },
     {
-        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_go_search_api_material.xml",
-        "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable\\abc_ic_go_search_api_material.xml"
-    },
-    {
-        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_textfield_search_material.xml",
-        "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable\\abc_textfield_search_material.xml"
-    },
-    {
         "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\menu.png",
         "source": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\src\\main\\res\\drawable\\menu.png"
     },
     {
-        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_dark.xml",
-        "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable\\abc_list_selector_holo_dark.xml"
-    },
-    {
         "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_radio_material.xml",
         "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable\\abc_btn_radio_material.xml"
-    },
-    {
-        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_indicator_material.xml",
-        "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable\\abc_ratingbar_indicator_material.xml"
     },
     {
         "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_small_material.xml",
@@ -52,10 +36,6 @@
         "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable\\abc_tab_indicator_material.xml"
     },
     {
-        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_thumb_material.xml",
-        "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable\\abc_seekbar_thumb_material.xml"
-    },
-    {
         "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ahri.png",
         "source": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\src\\main\\res\\drawable\\ahri.png"
     },
@@ -64,8 +44,16 @@
         "source": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\src\\main\\res\\drawable\\set.png"
     },
     {
+        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\mail2.png",
+        "source": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\src\\main\\res\\drawable\\mail2.png"
+    },
+    {
         "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_search_api_material.xml",
         "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable\\abc_ic_search_api_material.xml"
+    },
+    {
+        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\off.png",
+        "source": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\src\\main\\res\\drawable\\off.png"
     },
     {
         "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_colored_material.xml",
@@ -92,10 +80,6 @@
         "source": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\src\\main\\res\\drawable\\time.png"
     },
     {
-        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_default_mtrl_shape.xml",
-        "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
-    },
-    {
         "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_tick_mark_material.xml",
         "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable\\abc_seekbar_tick_mark_material.xml"
     },
@@ -106,10 +90,6 @@
     {
         "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\persona.png",
         "source": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\src\\main\\res\\drawable\\persona.png"
-    },
-    {
-        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_top_material.xml",
-        "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable\\abc_cab_background_top_material.xml"
     },
     {
         "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_voice_search_api_material.xml",
@@ -124,10 +104,6 @@
         "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable\\abc_dialog_material_background.xml"
     },
     {
-        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_dark.xml",
-        "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable\\abc_item_background_holo_dark.xml"
-    },
-    {
         "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_tile_bg.xml",
         "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable\\notification_tile_bg.xml"
     },
@@ -136,24 +112,80 @@
         "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable\\abc_seekbar_track_material.xml"
     },
     {
-        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_ab_back_material.xml",
-        "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable\\abc_ic_ab_back_material.xml"
+        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_icon_background.xml",
+        "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable\\notification_icon_background.xml"
+    },
+    {
+        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\back.png",
+        "source": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\src\\main\\res\\drawable\\back.png"
+    },
+    {
+        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_vector_test.xml",
+        "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable\\abc_vector_test.xml"
+    },
+    {
+        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_clear_material.xml",
+        "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable\\abc_ic_clear_material.xml"
+    },
+    {
+        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_spinner_textfield_background_material.xml",
+        "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable\\abc_spinner_textfield_background_material.xml"
+    },
+    {
+        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_internal_bg.xml",
+        "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable\\abc_cab_background_internal_bg.xml"
+    },
+    {
+        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_edit_text_material.xml",
+        "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable\\abc_edit_text_material.xml"
+    },
+    {
+        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_textfield_search_material.xml",
+        "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable\\abc_textfield_search_material.xml"
+    },
+    {
+        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_go_search_api_material.xml",
+        "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable\\abc_ic_go_search_api_material.xml"
+    },
+    {
+        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_dark.xml",
+        "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable\\abc_list_selector_holo_dark.xml"
+    },
+    {
+        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_indicator_material.xml",
+        "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable\\abc_ratingbar_indicator_material.xml"
+    },
+    {
+        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\off2.png",
+        "source": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\src\\main\\res\\drawable\\off2.png"
+    },
+    {
+        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_thumb_material.xml",
+        "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable\\abc_seekbar_thumb_material.xml"
+    },
+    {
+        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_default_mtrl_shape.xml",
+        "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
+    },
+    {
+        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_top_material.xml",
+        "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable\\abc_cab_background_top_material.xml"
+    },
+    {
+        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_dark.xml",
+        "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable\\abc_item_background_holo_dark.xml"
     },
     {
         "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_menu_overflow_material.xml",
         "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable\\abc_ic_menu_overflow_material.xml"
     },
     {
-        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_icon_background.xml",
-        "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable\\notification_icon_background.xml"
+        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_ab_back_material.xml",
+        "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable\\abc_ic_ab_back_material.xml"
     },
     {
         "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_switch_thumb_material.xml",
         "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable\\abc_switch_thumb_material.xml"
-    },
-    {
-        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\back.png",
-        "source": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\src\\main\\res\\drawable\\back.png"
     },
     {
         "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_text_cursor_material.xml",
@@ -168,23 +200,7 @@
         "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
     },
     {
-        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_clear_material.xml",
-        "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable\\abc_ic_clear_material.xml"
-    },
-    {
-        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_vector_test.xml",
-        "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable\\abc_vector_test.xml"
-    },
-    {
-        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_spinner_textfield_background_material.xml",
-        "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable\\abc_spinner_textfield_background_material.xml"
-    },
-    {
         "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_light.xml",
         "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable\\abc_item_background_holo_light.xml"
-    },
-    {
-        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_internal_bg.xml",
-        "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable\\abc_cab_background_internal_bg.xml"
     }
 ]

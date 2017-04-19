@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\activity_main.xml",
+        "source": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\src\\main\\res\\layout-land\\activity_main.xml"
+    },
+    {
+        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\activity_config.xml",
+        "source": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\src\\main\\res\\layout-land\\activity_config.xml"
+    },
+    {
+        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\activity_desarrollo.xml",
+        "source": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\src\\main\\res\\layout-land\\activity_desarrollo.xml"
+    },
+    {
+        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\activity_help.xml",
+        "source": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\src\\main\\res\\layout-land\\activity_help.xml"
+    },
+    {
+        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\activity_results.xml",
+        "source": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\src\\main\\res\\layout-land\\activity_results.xml"
+    }
+]
