@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:text="@string/sendmail"
             android:drawableLeft="@drawable/mail"
-            />
+            android:onClick="SendMail"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         finish();
     }
     public void moveToGame(View view){
-        Intent in = new Intent(this,DesarrolloActivity.class);
+        Intent in = new Intent(this,ConfigActivity.class);
         startActivity(in);
         finish();
     }

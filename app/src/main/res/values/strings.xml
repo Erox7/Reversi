@@ -17,4 +17,8 @@
     <string name="email">E-mail Destinatari</string>
     <string name="newGame">Nova Partida</string>
     <string name="sendmail">Enviar e-mail</string>
+    <string name="cntrlTime">Temps Per cap</string>
+    <string name="edestin">E-mail destí</string>
+    <string name="logHint">Valors del Log</string>
+    <string name="timehint">Dia i hora</string>
 </resources>
