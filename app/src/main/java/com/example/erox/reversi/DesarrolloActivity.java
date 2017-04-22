@@ -7,11 +7,11 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.TextView;
 
 import java.util.Arrays;
 
 public class DesarrolloActivity extends AppCompatActivity {
-    private int time = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,10 +20,14 @@ public class DesarrolloActivity extends AppCompatActivity {
 
         Intent in = getIntent();
         Integer numCols = Integer.parseInt(in.getStringExtra("key").toString());
+        TextView timeView = (TextView) findViewById(R.id.TimeCounter);
+        TextView emptyFields = (TextView) findViewById(R.id.BlocksLeft);
+        TextView contadorView = (TextView) findViewById(R.id.Contador);
 
         GridView gridview = (GridView) findViewById(R.id.gridView);
         gridview.setNumColumns(numCols);
         gridview.setAdapter( new ButtonAdapter(this,numCols));
+
     }
 
 }

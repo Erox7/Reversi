@@ -17,12 +17,14 @@ public class ButtonAdapter extends BaseAdapter {
     private Context mContext;
     private int count = 0;
     private int nCols = 0;
-    private Boolean isFirst = true;
+    private int time = 25;
 
     public ButtonAdapter(Context c, Integer numCols) {
         mContext = c;
         count = numCols * numCols;
         nCols = numCols;
+        //Pasarle las referencias a los TV para poder modificarlos.
+        //Contador de fichas blancas i negras, como atributos de la classe, que se suman i restan cada vez que modifico una pieza
     }
 
     public int getCount() {
@@ -85,7 +87,7 @@ public class ButtonAdapter extends BaseAdapter {
         return bn;
     }
 
-    private class MyOnClickListener implements View.OnClickListener {
+    private class MyOnClickListener implements View.OnClickListener{
         private final int position;
 
         public MyOnClickListener(int position) {
@@ -94,7 +96,7 @@ public class ButtonAdapter extends BaseAdapter {
 
         @Override
         public void onClick(View v) {
-            //all the click IA
+            //all the click IA somefunction(position)
             Button b = (Button) v;
             b.setBackgroundResource(R.drawable.button_white);
             //TIRADA DEL JUGADOR HUMANO

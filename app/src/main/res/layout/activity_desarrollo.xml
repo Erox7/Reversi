@@ -11,19 +11,22 @@
         android:gravity="center"/>
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right">
         <TextView
+            android:id="@+id/BlocksLeft"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Caselles pendents                  "
             android:drawableRight="@drawable/time2"
             android:gravity="center"/>
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/TimeCounter"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="                               Time Left"
-            android:gravity="center"/>
+            android:text="Time Left"
+            android:gravity="right"/>
     </LinearLayout>
 
     <GridView
@@ -36,9 +39,10 @@
         android:verticalSpacing="0dp"></GridView>
 
     <TextView
+        android:id="@+id/Contador"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TU: X; OPONENT: Y"
+        android:text="TU: 2; OPONENT: 2"
         android:gravity="center"/>
 
 </LinearLayout>
