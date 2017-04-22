@@ -25,14 +25,16 @@
             android:text="                               Time Left"
             android:gravity="center"/>
     </LinearLayout>
+
     <GridView
         android:id="@+id/gridView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:columnWidth="100dp"
-        android:numColumns="auto_fit"
-        android:verticalSpacing="0dp">
-    </GridView>
+        android:gravity="center"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="0dp"></GridView>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -17,7 +17,9 @@
         android:text="@string/dia"/>
     <EditText
         android:layout_width="wrap_content"
-        android:layout_height="31dp" />
+        android:layout_height="31dp"
+        android:hint="@string/dia"
+        android:textSize="10dp"/>
 
 
     <TextView
@@ -28,7 +30,9 @@
     <EditText
         android:id="@+id/editText2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:hint="@string/logHint"
+        android:textSize="10dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -36,7 +40,9 @@
         android:text="@string/email"/>
     <EditText
         android:layout_width="wrap_content"
-        android:layout_height="26dp" />
+        android:layout_height="wrap_content"
+        android:hint="@string/edestin"
+        android:textSize="10dp"/>
 
 
     <LinearLayout

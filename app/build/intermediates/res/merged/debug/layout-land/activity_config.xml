@@ -43,9 +43,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:id="@+id/RadioGroup">
+        android:id="@+id/RadioGroup"
+        android:checkedButton="@+id/eight">
         <RadioButton
-            android:id="@+id/eight"
+            android:id="@id/eight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="8"/>
@@ -83,7 +84,7 @@
             android:id="@+id/editTime"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:hint="@string/HiddenText" />
+            android:hint="@string/cntrlTime" />
     </LinearLayout>
 
     <Button

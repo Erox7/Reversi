@@ -2539,17 +2539,21 @@ containing a value of this type.
         public static final int alias=0x7f060027;
         public static final int app_name=0x7f060028;
         public static final int backButton=0x7f060029;
-        public static final int dia=0x7f06002a;
-        public static final int email=0x7f06002b;
-        public static final int greetings=0x7f06002c;
-        public static final int howToPlay=0x7f06002d;
-        public static final int midaGrae=0x7f06002e;
-        public static final int newGame=0x7f06002f;
-        public static final int results=0x7f060030;
+        public static final int cntrlTime=0x7f06002a;
+        public static final int dia=0x7f06002b;
+        public static final int edestin=0x7f06002c;
+        public static final int email=0x7f06002d;
+        public static final int greetings=0x7f06002e;
+        public static final int howToPlay=0x7f06002f;
+        public static final int logHint=0x7f060030;
+        public static final int midaGrae=0x7f060031;
+        public static final int newGame=0x7f060032;
+        public static final int results=0x7f060033;
         public static final int search_menu_title=0x7f060013;
-        public static final int sendmail=0x7f060031;
-        public static final int state=0x7f060032;
+        public static final int sendmail=0x7f060034;
+        public static final int state=0x7f060035;
         public static final int status_bar_notification_info_overflow=0x7f060014;
+        public static final int timehint=0x7f060036;
     }
     public static final class style {
         public static final int AlertDialog_AppCompat=0x7f08009f;
