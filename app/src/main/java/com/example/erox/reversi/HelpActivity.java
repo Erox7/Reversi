@@ -14,7 +14,7 @@ public class HelpActivity extends AppCompatActivity {
     }
 
     public void mainMenu(View view){
-        Intent in = new Intent(this, DesarrolloActivity.class);
+        Intent in = new Intent(this, MainActivity.class);
         startActivity(in);
         finish();
     }

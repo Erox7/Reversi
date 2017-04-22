@@ -449,7 +449,7 @@
     <string name="alias">Alias Identificatiu</string>
     <string name="app_name">Reversi</string>
     <string name="backButton">Anar al Joc</string>
-    <string name="cntrlTime">Temps Per cap</string>
+    <string name="cntrlTime">Control de Temps</string>
     <string name="dia">Dia y hora</string>
     <string name="edestin">E-mail destí</string>
     <string name="email">E-mail Destinatari</string>

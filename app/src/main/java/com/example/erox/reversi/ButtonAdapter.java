@@ -16,10 +16,13 @@ import android.widget.ImageView;
 public class ButtonAdapter extends BaseAdapter {
     private Context mContext;
     private int count = 0;
+    private int nCols = 0;
+    private Boolean isFirst = true;
 
     public ButtonAdapter(Context c, Integer numCols) {
         mContext = c;
         count = numCols * numCols;
+        nCols = numCols;
     }
 
     public int getCount() {
@@ -35,6 +38,7 @@ public class ButtonAdapter extends BaseAdapter {
     }
 
     // create a new Button for each item referenced by the Adapter
+    // We will be the white ones.
     public View getView(int position, View convertView, ViewGroup parent) {
         Button bn;
         if (convertView == null) {
@@ -42,13 +46,42 @@ public class ButtonAdapter extends BaseAdapter {
             bn = new Button(mContext);
             bn.setLayoutParams(new GridView.LayoutParams(100, 100));
             bn.setPadding(8, 8, 8, 8);
+
+            if(position == (((nCols/2)*nCols)+(nCols/2))
+                    || position == (((nCols/2)*nCols)+(nCols/2)-nCols-1) ){
+
+                bn.setBackgroundResource(R.drawable.button_white);
+                bn.setEnabled(false);
+                bn.setId(position);
+
+            }else if(position == (((nCols/2)*nCols) + (nCols/2) - 1 )
+                    || position == (((nCols/2)*nCols) + nCols/2 - nCols )){
+
+                bn.setBackgroundResource(R.drawable.button_black);
+                bn.setEnabled(false);
+                bn.setId(position);
+
+            }else if(position == ((nCols/2)*nCols)+(nCols/2)-2 ||
+                    position == ((nCols/2)*nCols)+(nCols/2)-1+nCols ||
+                    position == ((nCols/2)*nCols)+(nCols/2)-(2*nCols) ||
+                    position == ((nCols/2)*nCols)+(nCols/2)-nCols+1 ){
+
+                bn.setBackgroundResource(R.drawable.button_posible);
+                bn.setOnClickListener(new MyOnClickListener(position));
+                bn.setEnabled(true);
+
+            }else{
+
+                bn.setBackgroundResource(R.drawable.button_normal);
+                bn.setEnabled(false);
+            }
         } else {
             bn = (Button) convertView;
+            bn.setEnabled(false);
         }
 
-        bn.setBackgroundResource(R.drawable.button_normal);
-        bn.setId(position);
-        bn.setOnClickListener(new MyOnClickListener(position));
+
+
         return bn;
     }
 
@@ -62,6 +95,15 @@ public class ButtonAdapter extends BaseAdapter {
         @Override
         public void onClick(View v) {
             //all the click IA
+            Button b = (Button) v;
+            b.setBackgroundResource(R.drawable.button_white);
+            //TIRADA DEL JUGADOR HUMANO
+
+
+
+
+            //TIRADA DEL JUGADOR PC
+            notifyDataSetChanged();
         }
     }
 }

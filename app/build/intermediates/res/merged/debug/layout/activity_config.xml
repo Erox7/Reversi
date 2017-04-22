@@ -73,11 +73,11 @@
             android:layout_height="52dp"
             android:src="@drawable/time" />
 
-        <EditText
-            android:id="@+id/editTime"
+        <CheckBox
+            android:id="@+id/checkbox"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:hint="@string/cntrlTime" />
+            android:layout_height="match_parent" />
+
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
