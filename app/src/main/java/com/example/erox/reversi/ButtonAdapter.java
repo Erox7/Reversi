@@ -53,7 +53,40 @@ public class ButtonAdapter extends BaseAdapter {
             bn.setLayoutParams(new GridView.LayoutParams(100, 100));
             bn.setPadding(8, 8, 8, 8);
 
-            if(position == (((nCols/2)*nCols)+(nCols/2))
+            for(int i = 0; i < nCols;i++){
+                for(int j = 0; j < nCols;j++){
+                    if(position == (j + (i*nCols))){
+
+                        int num = mController.positions[i][j];
+
+                        //0 will be a normal position, 1 a posible position, 2 white, 3 black
+                        if(num == 0){
+
+                            bn.setBackgroundResource(R.drawable.button_normal);
+                            bn.setClickable(false);
+
+                        }else if(num == 1){
+
+                            bn.setBackgroundResource(R.drawable.button_posible);
+                            bn.setOnClickListener(new MyOnClickListener(position));
+                            bn.setClickable(true);
+                            bn.setEnabled(true);
+
+                        }else if(num == 2){
+
+                            bn.setBackgroundResource(R.drawable.button_white);
+                            bn.setClickable(false);
+
+                        }else if(num == 3){
+
+                            bn.setBackgroundResource(R.drawable.button_black);
+                            bn.setClickable(false);
+
+                        }
+                    }
+                }
+            }
+            /*if(position == (((nCols/2)*nCols)+(nCols/2))
                     || position == (((nCols/2)*nCols)+(nCols/2)-nCols-1) ){
 
                 bn.setBackgroundResource(R.drawable.button_white);
@@ -82,7 +115,7 @@ public class ButtonAdapter extends BaseAdapter {
                 bn.setBackgroundResource(R.drawable.button_normal);
                 bn.setClickable(false);
                 bn.setId(position);
-            }
+            }*/
         } else {
 
             bn = (Button) convertView;
@@ -97,7 +130,7 @@ public class ButtonAdapter extends BaseAdapter {
     }
 
     private void decideButton(int position, Button bn, int i, int j) {
-        if(position == (j + (i*4))){
+        if(position == (j + (i*nCols))){
 
             int num = mController.positions[i][j];
 
@@ -111,6 +144,7 @@ public class ButtonAdapter extends BaseAdapter {
 
                 bn.setBackgroundResource(R.drawable.button_posible);
                 bn.setClickable(true);
+                bn.setEnabled(true);
 
             }else if(num == 2){
 
@@ -140,10 +174,50 @@ public class ButtonAdapter extends BaseAdapter {
             b.setBackgroundResource(R.drawable.button_white);
             //TIRADA DEL JUGADOR HUMANO
             //position in Array mController = [position / cols][pos % cols]
+            int fila = position / nCols;
+            int columna = position % nCols;
 
-            mController.positions[position / nCols][position % nCols] = 2;
+            mController.positions[fila][columna] = 2;
+            for (int x = 0; x < nCols; x++){//horitzontal dreta
+                if(nCols > columna+x ){//&& 0 <= (position + x) % nCols) {
+                    if (mController.positions[fila][columna+x] == 2) {
+                        for(int y =columna; y < columna+x;y ++){
+                            mController.positions[fila][y] = 2;
+                        }
 
+                    }
+                }
+            }
+            for (int x = 0; x < nCols; x++){//horitzontal ESQUERRA
+                if(0 <= columna-x ){//&& 0 <= (position + x) % nCols) {
+                    if (mController.positions[fila][columna-x] == 2) {
+                        for(int y = columna; y > columna-x;y --){
+                            mController.positions[fila][y] = 2;
+                        }
 
+                    }
+                }
+            }
+            for (int x = 0; x < nCols; x++){//VERTICAL DAL-BAIX
+                if(nCols > fila+x ){//&& 0 <= (position + x) % nCols) {
+                    if (mController.positions[fila+x][columna] == 2) {
+                        for(int y =fila; y < fila+x;y ++){
+                            mController.positions[y][columna] = 2;
+                        }
+
+                    }
+                }
+            }
+            for (int x = 0; x < nCols; x++){//VERTICAL baix-dal
+                if(0 <= fila-x ){//&& 0 <= (position + x) % nCols) {
+                    if (mController.positions[fila-x][columna] == 2) {
+                        for(int y = fila; y > fila-x;y --){
+                            mController.positions[y][columna] = 2;
+                        }
+
+                    }
+                }
+            }
             //TIRADA DEL JUGADOR PC
             notifyDataSetChanged();
         }
