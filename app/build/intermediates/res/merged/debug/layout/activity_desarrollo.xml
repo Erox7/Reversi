@@ -39,9 +39,10 @@
         android:verticalSpacing="0dp"></GridView>
 
     <TextView
+        android:id="@+id/Contador"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TU: X; OPONENT: Y"
+        android:text="TU: 2; OPONENT: 2"
         android:gravity="center"/>
 
 </LinearLayout>
