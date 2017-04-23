@@ -45,8 +45,8 @@ public class ButtonAdapter extends BaseAdapter {
     // create a new Button for each item referenced by the Adapter
     // We will be the white ones.
     public View getView(int position, View convertView, ViewGroup parent) {
-        Button bn;
 
+        Button bn;
         if (convertView == null) {
             // if it's not recycled, initialize some attributes
             bn = new Button(mContext);
@@ -75,34 +75,55 @@ public class ButtonAdapter extends BaseAdapter {
                 bn.setBackgroundResource(R.drawable.button_posible);
                 bn.setOnClickListener(new MyOnClickListener(position));
                 bn.setClickable(true);
+                bn.setId(position);
 
             }else{
 
                 bn.setBackgroundResource(R.drawable.button_normal);
                 bn.setClickable(false);
+                bn.setId(position);
             }
         } else {
+
             bn = (Button) convertView;
             for(int i = 0; i < nCols;i++){
                 for(int j = 0; j < nCols;j++){
-                    if(position == (j + (i*4))){
-                        int num = mController.positions[i][j];
-                        //0 will be a normal position, 1 a posible position, 2 white, 3 black
-                        if(num == 0){
-                            bn.setBackgroundResource(R.drawable.button_normal);
-                        }else if(num == 1){
-                            bn.setBackgroundResource(R.drawable.button_posible);
-                        }else if(num == 2){
-                            bn.setBackgroundResource(R.drawable.button_white);
-                        }else if(num == 3){
-                            bn.setBackgroundResource(R.drawable.button_black);
-                        }
-                    }
+                    decideButton(position, bn, i, j);
                 }
             }
         }
 
         return bn;
+    }
+
+    private void decideButton(int position, Button bn, int i, int j) {
+        if(position == (j + (i*4))){
+
+            int num = mController.positions[i][j];
+
+            //0 will be a normal position, 1 a posible position, 2 white, 3 black
+            if(num == 0){
+
+                bn.setBackgroundResource(R.drawable.button_normal);
+                bn.setClickable(false);
+
+            }else if(num == 1){
+
+                bn.setBackgroundResource(R.drawable.button_posible);
+                bn.setClickable(true);
+
+            }else if(num == 2){
+
+                bn.setBackgroundResource(R.drawable.button_white);
+                bn.setClickable(false);
+
+            }else if(num == 3){
+
+                bn.setBackgroundResource(R.drawable.button_black);
+                bn.setClickable(false);
+
+            }
+        }
     }
 
     private class MyOnClickListener implements View.OnClickListener{
@@ -118,8 +139,9 @@ public class ButtonAdapter extends BaseAdapter {
             Button b = (Button) v;
             b.setBackgroundResource(R.drawable.button_white);
             //TIRADA DEL JUGADOR HUMANO
+            //position in Array mController = [position / cols][pos % cols]
 
-
+            mController.positions[position / nCols][position % nCols] = 2;
 
 
             //TIRADA DEL JUGADOR PC
