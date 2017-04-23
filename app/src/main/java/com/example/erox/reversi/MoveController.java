@@ -18,13 +18,6 @@ public class MoveController {
                                           {0,0,1,0,0,0},
                                           {0,0,0,0,0,0}};
 
-    private Integer[][] testDiagonals = new Integer[][]{{2,0,0,0,2,0},
-                                                        {2,3,0,3,2,0},
-                                                        {2,3,1,3,2,0},
-                                                        {2,3,0,3,2,0},
-                                                        {2,3,0,3,2,0},
-                                                        {2,0,0,0,2,0}};
-
     private Integer[][] eightcols = new Integer[][]{{0,0,0,0,0,0,0,0},
                                                      {0,0,0,0,0,0,0,0},
                                                     {0,0,0,0,1,0,0,0},
@@ -42,14 +35,13 @@ public class MoveController {
     }
 
     public void setArray(){
-        /*if(cols == 4){
+        if(cols == 4){
             positions = fourcols;
         }else if(cols == 6){
             positions = sixcols;
         }else{
             positions = eightcols;
-        }*/
-        positions = testDiagonals;
+        }
     }
 
 }
