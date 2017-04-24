@@ -21,6 +21,7 @@ public class DesarrolloActivity extends AppCompatActivity {
         Intent in = getIntent();
         Integer numCols = Integer.parseInt(in.getStringExtra("key").toString());
         String Alias = in.getStringExtra("Alias");
+        boolean count_timer = in.getBooleanExtra("CheckKey",false);
 
         TextView timeView = (TextView) findViewById(R.id.TimeCounter);
         TextView emptyFields = (TextView) findViewById(R.id.BlocksLeft);
@@ -28,7 +29,7 @@ public class DesarrolloActivity extends AppCompatActivity {
 
         GridView gridview = (GridView) findViewById(R.id.gridView);
         gridview.setNumColumns(numCols);
-        gridview.setAdapter( new ButtonAdapter(this,numCols,timeView,emptyFields,contadorView));
+        gridview.setAdapter( new ButtonAdapter(this,numCols,timeView,emptyFields,contadorView, (System.currentTimeMillis()/1000),count_timer));
 
     }
 

@@ -3,19 +3,22 @@ package com.example.erox.reversi;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Created by Erox on 20/04/2017.
  */
 
 public class ButtonAdapter extends BaseAdapter {
-    private Context mContext;
+    private final long time_start_activity;
+    private Activity mContext;
     private int count;
     private int nCols;
     private int time = 25;
@@ -26,20 +29,25 @@ public class ButtonAdapter extends BaseAdapter {
     private int nEmpty = 0;
     private int nWhite = 0;
     private int nBlack = 0;
+    private long time_start;
+    private long time_end;
+    private Boolean time_counter;
 
 
 
-    public ButtonAdapter(Activity c, Integer numCols, TextView timeView, TextView emptyFields, TextView contadorView) {
+    public ButtonAdapter(Activity c, Integer numCols, TextView timeView, TextView emptyFields, TextView contadorView, long l, Boolean count_timer) {
         mContext = c;
         count = numCols * numCols;
         nCols = numCols;
         mController = new MoveController(numCols);
         mController.setArray();
-
+        this.time_start = l;
+        this.time_start_activity = l;
         this.timeView = timeView;
         this.emptyFields = emptyFields;
         this.contadorView = contadorView;
         this.emptyFields.setText(count-4 + "  Caselles Pendents");
+        this.time_counter = count_timer;
     }
 
     public int getCount() {
@@ -57,7 +65,6 @@ public class ButtonAdapter extends BaseAdapter {
     // create a new Button for each item referenced by the Adapter
     // We will be the white ones.
     public View getView(int position, View convertView, ViewGroup parent) {
-
         Button bn;
         if (convertView == null) {
             // if it's not recycled, initialize some attributes
@@ -136,7 +143,17 @@ public class ButtonAdapter extends BaseAdapter {
         //Control de tiempo inactivo
         @Override
         public void onClick(View v) {
-
+            /*Calcular tiempos:
+            long time_start, time_end;
+            time_start = System.currentTimeMillis();
+            ReallyHeavyTask(); // llamamos a la tarea
+            time_end = System.currentTimeMillis();
+            System.out.println("the task has taken "+ ( time_end/1000 - time_start/1000 ) +" milliseconds");
+             */
+            if(time_counter) {
+                time_end = (System.currentTimeMillis() / 1000);
+                timeControl();
+            }
             Button b = (Button) v;
             b.setBackgroundResource(R.drawable.button_white);
 
@@ -161,6 +178,22 @@ public class ButtonAdapter extends BaseAdapter {
             contadorView.setText("Tu:" + nWhite +" ; "+ "Oponent: " + nBlack);
             emptyFields.setText(nEmpty + "  Caselles Pendents");
             notifyDataSetChanged();
+        }
+
+        private void timeControl() {
+
+            if((time_end - time_start) > time){
+                Toast.makeText(mContext, "Time Expired", Toast.LENGTH_SHORT).show();
+                Intent in = new Intent(mContext, ResultsActivity.class);
+                mContext.startActivity(in);
+                mContext.finish();
+
+            }else{
+
+                timeView.setText("Time: " + (time_end - time_start));
+                time_start = time_end;
+
+            }
         }
 
         private void posibleDiagonalMoves() {

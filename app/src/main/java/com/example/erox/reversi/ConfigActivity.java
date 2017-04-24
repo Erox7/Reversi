@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -37,6 +38,8 @@ public class ConfigActivity extends AppCompatActivity implements OnClickListener
         }else{
 
             Intent in = new Intent(this.c, DesarrolloActivity.class);
+            CheckBox cb = (CheckBox) findViewById(R.id.checkbox);
+            in.putExtra("CheckKey",cb.isChecked());
             in.putExtra("Alias", et.getText());
             in.putExtra("key", RB.getText());
             startActivity(in);
