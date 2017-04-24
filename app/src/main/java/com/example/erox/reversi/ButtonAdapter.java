@@ -270,7 +270,7 @@ public class ButtonAdapter extends BaseAdapter {
             for (int x = 0; x < nCols; x++) {//posiblesa horitzontal
                 for (int y = 0; y < nCols; y++) {
                     if (mController.positions[x][y] == 2) {
-                        if(mController.positions[x][y + 1] == 3) {
+                        if(y < nCols -1 && mController.positions[x][y + 1] == 3) {
                             for (int i = y; i < nCols; i++) {//buscan cap a dreta
                                 if (mController.positions[x][i] == 3) {
                                     ntrovada = true;
@@ -346,8 +346,8 @@ public class ButtonAdapter extends BaseAdapter {
         }
 
         private void searchDiagonals(int fila, int columna) {
-            for (int x = 0; x < nCols - 1; x++) {//Sud Est
-                if (nCols - 1 > columna + x && nCols - 1 > fila + x) {
+            for (int x = 1; x < nCols - 1; x++) {//Sud Est
+                if (nCols > columna + x && nCols > fila + x) {
                     if(mController.positions[fila + 1][columna + 1] == 3) {
                         if (mController.positions[fila + x][columna + x] == 2) {
                             int tmpfila = fila + x;
@@ -363,7 +363,7 @@ public class ButtonAdapter extends BaseAdapter {
                 }
             }
 
-            for (int x = 0; x < nCols - 1; x++) {//Sud Oest
+            for (int x = 1; x < nCols - 1; x++) {//Sud Oest
                 if (0 < columna - x && nCols > fila + x) {
                     if (mController.positions[fila + 1][columna - 1 ] == 3) {
                         if (mController.positions[fila + x][columna - x] == 2) {
@@ -380,8 +380,8 @@ public class ButtonAdapter extends BaseAdapter {
                 }
             }
 
-            for (int x = 0; x < nCols - 1; x++) {//Nord Est
-                if ((nCols - 1) > columna + x && 0 < fila - x) {
+            for (int x = 1; x < nCols - 1; x++) {//Nord Est
+                if (nCols > columna + x && 0 < fila - x) {
                     if (mController.positions[fila - 1][columna + 1 ] == 3) {
                         if (mController.positions[fila - x][columna + x] == 2) {
                             int tmpfila = fila - x;
