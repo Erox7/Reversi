@@ -40,8 +40,6 @@ public class ButtonAdapter extends BaseAdapter {
         this.emptyFields = emptyFields;
         this.contadorView = contadorView;
         this.emptyFields.setText(count-4 + "  Caselles Pendents");
-        //Pasarle las referencias a los TV para poder modificarlos.
-        //Contador de fichas blancas i negras, como atributos de la classe, que se suman i restan cada vez que modifico una pieza
     }
 
     public int getCount() {
@@ -135,7 +133,7 @@ public class ButtonAdapter extends BaseAdapter {
         public MyOnClickListener(int position) {
             this.position = position;
         }
-
+        //Control de tiempo inactivo
         @Override
         public void onClick(View v) {
 
@@ -235,26 +233,29 @@ public class ButtonAdapter extends BaseAdapter {
             for (int x = 0; x < nCols; x++) {//posiblesa vertical
                 for (int y = 0; y < nCols; y++) {
                     if (mController.positions[x][y] == 2) {
-                        for (int i = x; i < nCols; i++) {//buscan dal-baix
-                            if (mController.positions[i][y] == 3) {
-                                ntrovada = true;
-                            } else if (mController.positions[i][y] == 0 && ntrovada == true) {
-                                mController.positions[i][y] = 1;
-                                break;
-                            } else if (mController.positions[i][y] == 1 && ntrovada == true) {
-                                break;
+                        if(mController.positions[x + 1][y] == 3) {
+                            for (int i = x; i < nCols; i++) {//buscan dal-baix
+                                if (mController.positions[i][y] == 3) {
+                                    ntrovada = true;
+                                } else if (mController.positions[i][y] == 0 && ntrovada == true) {
+                                    mController.positions[i][y] = 1;
+                                    break;
+                                } else if (mController.positions[i][y] == 1 && ntrovada == true) {
+                                    break;
+                                }
                             }
                         }
                         ntrovada = false;
-
-                        for (int i = x; i >= 0; i--) {//buscan baix-dal
-                            if (mController.positions[i][y] == 3) {
-                                ntrovada = true;
-                            } else if (mController.positions[i][y] == 0 && ntrovada == true) {
-                                mController.positions[i][y] = 1;
-                                break;
-                            } else if (mController.positions[i][y] == 1 && ntrovada == true) {
-                                break;
+                        if(x > 0 && mController.positions[x - 1][y] == 3) {
+                            for (int i = x; i >= 0; i--) {//buscan baix-dal
+                                if (mController.positions[i][y] == 3) {
+                                    ntrovada = true;
+                                } else if (mController.positions[i][y] == 0 && ntrovada == true) {
+                                    mController.positions[i][y] = 1;
+                                    break;
+                                } else if (mController.positions[i][y] == 1 && ntrovada == true) {
+                                    break;
+                                }
                             }
                         }
                         ntrovada = false;
@@ -269,26 +270,30 @@ public class ButtonAdapter extends BaseAdapter {
             for (int x = 0; x < nCols; x++) {//posiblesa horitzontal
                 for (int y = 0; y < nCols; y++) {
                     if (mController.positions[x][y] == 2) {
-                        for (int i = y; i < nCols; i++) {//buscan cap a dreta
-                            if (mController.positions[x][i] == 3) {
-                                ntrovada = true;
-                            } else if (mController.positions[x][i] == 0 && ntrovada == true) {
-                                mController.positions[x][i] = 1;
-                                break;
-                            } else if (mController.positions[x][i] == 1 && ntrovada == true) {
-                                break;
+                        if(mController.positions[x][y + 1] == 3) {
+                            for (int i = y; i < nCols; i++) {//buscan cap a dreta
+                                if (mController.positions[x][i] == 3) {
+                                    ntrovada = true;
+                                } else if (mController.positions[x][i] == 0 && ntrovada == true) {
+                                    mController.positions[x][i] = 1;
+                                    break;
+                                } else if (mController.positions[x][i] == 1 && ntrovada == true) {
+                                    break;
+                                }
                             }
                         }
                         ntrovada = false;
 
-                        for (int i = y; i >= 0; i--) {//buscan cap a esquerra
-                            if (mController.positions[x][i] == 3) {
-                                ntrovada = true;
-                            } else if (mController.positions[x][i] == 0 && ntrovada == true) {
-                                mController.positions[x][i] = 1;
-                                break;
-                            } else if (mController.positions[x][i] == 1 && ntrovada == true) {
-                                break;
+                        if(y > 0 && mController.positions[x][y - 1] == 3) {
+                            for (int i = y; i >= 0; i--) {//buscan cap a esquerra
+                                if (mController.positions[x][i] == 3) {
+                                    ntrovada = true;
+                                } else if (mController.positions[x][i] == 0 && ntrovada == true) {
+                                    mController.positions[x][i] = 1;
+                                    break;
+                                } else if (mController.positions[x][i] == 1 && ntrovada == true) {
+                                    break;
+                                }
                             }
                         }
                         ntrovada = false;
@@ -376,7 +381,7 @@ public class ButtonAdapter extends BaseAdapter {
             }
 
             for (int x = 0; x < nCols - 1; x++) {//Nord Est
-                if ((nCols - 1) > columna - x && 0 < fila - x) {
+                if ((nCols - 1) > columna + x && 0 < fila - x) {
                     if (mController.positions[fila - 1][columna + 1 ] == 3) {
                         if (mController.positions[fila - x][columna + x] == 2) {
                             int tmpfila = fila - x;
@@ -446,6 +451,7 @@ public class ButtonAdapter extends BaseAdapter {
                     }
                 }
             }
+
             for (int x = 0; x < nCols -1; x++) {//horitzontal ESQUERRA
                 if (0 < columna - x) {
                     if(mController.positions[fila][columna - 1] == 3) {
