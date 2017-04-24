@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:2:1-39:12
+ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:2:1-47:12
 	package
 		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:3:5-39
 		INJECTED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml
@@ -13,78 +13,8 @@ ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest
 	android:versionCode
 		INJECTED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml
 		INJECTED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml
-application
-ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:5:5-37:19
-MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\Erox\.android\build-cache\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-v4:25.2.0] C:\Users\Erox\.android\build-cache\2b529dc8a3aaea56530bf69077de12c2ede6cf52\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\Erox\.android\build-cache\8809599ccb6b2dcc94faa08c2242b125c6e78656\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\Erox\.android\build-cache\521be5a4e870b520d183882fba75625e5ee91eae\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\Erox\.android\build-cache\ef4739d7e1314064217c8b104f372b560d79ddbf\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-utils:25.2.0] C:\Users\Erox\.android\build-cache\c4d66d5e8ae9963d64c3874a11a1ba88af228fb7\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\Erox\.android\build-cache\0644d7f3308dd96057ca5dddb1ef67e55c95da0e\output\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\Erox\.android\build-cache\d2fa4ef0823073706fd9fada10b26e0034d6dd8e\output\AndroidManifest.xml:23:5-20
-MERGED from [com.android.support:support-compat:25.2.0] C:\Users\Erox\.android\build-cache\da36689776de70f8e65fec91f1c7d853149426b1\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Erox\.android\build-cache\60e27bf42fd8b4365bbed1d33cc6764cf14d1565\output\AndroidManifest.xml:9:5-20
-	android:label
-		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:7:9-41
-	android:supportsRtl
-		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:8:9-35
-	android:allowBackup
-		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:6:9-35
-	android:theme
-		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:9:9-40
-activity#com.example.erox.reversi.MainActivity
-ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:10:9-19:20
-	android:label
-		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:13:13-38
-	android:icon
-		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:12:13-43
-	android:name
-		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:11:13-41
-intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:14:13-18:29
-action#android.intent.action.MAIN
-ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:15:17-69
-	android:name
-		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:15:25-66
-category#android.intent.category.LAUNCHER
-ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:17:17-77
-	android:name
-		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:17:27-74
-activity#com.example.erox.reversi.HelpActivity
-ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:20:9-23:37
-	android:label
-		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:23:13-34
-	android:icon
-		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:22:13-42
-	android:name
-		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:21:13-41
-activity#com.example.erox.reversi.ConfigActivity
-ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:24:9-27:45
-	android:label
-		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:27:13-42
-	android:icon
-		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:26:13-41
-	android:name
-		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:25:13-43
-activity#com.example.erox.reversi.DesarrolloActivity
-ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:29:9-31:41
-	android:label
-		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:31:13-39
-	android:icon
-		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:30:13-41
-	android:name
-		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:29:19-53
-activity#com.example.erox.reversi.ResultsActivity
-ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:33:9-36:20
-	android:label
-		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:35:13-39
-	android:icon
-		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:34:13-41
-	android:name
-		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:33:19-50
 uses-sdk
-INJECTED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:4:5-6:41
 MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\Erox\.android\build-cache\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\output\AndroidManifest.xml:21:5-23:78
 MERGED from [com.android.support:support-v4:25.2.0] C:\Users\Erox\.android\build-cache\2b529dc8a3aaea56530bf69077de12c2ede6cf52\output\AndroidManifest.xml:21:5-23:54
 MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\Erox\.android\build-cache\8809599ccb6b2dcc94faa08c2242b125c6e78656\output\AndroidManifest.xml:21:5-23:60
@@ -98,8 +28,94 @@ MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Er
 	tools:overrideLibrary
 		ADDED from [com.android.support:appcompat-v7:25.2.0] C:\Users\Erox\.android\build-cache\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\output\AndroidManifest.xml:23:9-75
 	android:targetSdkVersion
+		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:6:9-38
 		INJECTED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml
 		INJECTED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
+		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:5:9-35
 		INJECTED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml
 		INJECTED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.SEND_SMS
+ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:8:5-67
+	android:name
+		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:8:22-64
+application
+ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:9:5-45:19
+MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\Erox\.android\build-cache\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-v4:25.2.0] C:\Users\Erox\.android\build-cache\2b529dc8a3aaea56530bf69077de12c2ede6cf52\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\Erox\.android\build-cache\8809599ccb6b2dcc94faa08c2242b125c6e78656\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\Erox\.android\build-cache\521be5a4e870b520d183882fba75625e5ee91eae\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\Erox\.android\build-cache\ef4739d7e1314064217c8b104f372b560d79ddbf\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:25.2.0] C:\Users\Erox\.android\build-cache\c4d66d5e8ae9963d64c3874a11a1ba88af228fb7\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\Erox\.android\build-cache\0644d7f3308dd96057ca5dddb1ef67e55c95da0e\output\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\Erox\.android\build-cache\d2fa4ef0823073706fd9fada10b26e0034d6dd8e\output\AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:support-compat:25.2.0] C:\Users\Erox\.android\build-cache\da36689776de70f8e65fec91f1c7d853149426b1\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Erox\.android\build-cache\60e27bf42fd8b4365bbed1d33cc6764cf14d1565\output\AndroidManifest.xml:9:5-20
+	android:label
+		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:11:9-41
+	android:supportsRtl
+		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:12:9-35
+	android:allowBackup
+		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:10:9-35
+	android:theme
+		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:13:9-40
+activity#com.example.erox.reversi.MainActivity
+ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:14:9-23:20
+	android:label
+		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:17:13-36
+	android:icon
+		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:16:13-43
+	android:name
+		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:15:13-41
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:18:13-22:29
+action#android.intent.action.MAIN
+ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:19:17-69
+	android:name
+		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:19:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:21:17-77
+	android:name
+		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:21:27-74
+activity#com.example.erox.reversi.HelpActivity
+ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:24:9-27:37
+	android:label
+		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:27:13-34
+	android:icon
+		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:26:13-42
+	android:name
+		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:25:13-41
+activity#com.example.erox.reversi.ConfigActivity
+ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:28:9-31:45
+	android:label
+		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:31:13-42
+	android:icon
+		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:30:13-41
+	android:name
+		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:29:13-43
+activity#com.example.erox.reversi.DesarrolloActivity
+ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:33:9-35:41
+	android:label
+		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:35:13-39
+	android:icon
+		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:34:13-41
+	android:name
+		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:33:19-53
+activity#com.example.erox.reversi.ResultsActivity
+ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:37:9-44:20
+	android:label
+		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:39:13-39
+	android:icon
+		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:38:13-41
+	android:name
+		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:37:19-50
+intent-filter#android.intent.action.SEND+android.intent.category.DEFAULT
+ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:40:13-43:29
+action#android.intent.action.SEND
+ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:41:17-69
+	android:name
+		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:41:25-66
+category#android.intent.category.DEFAULT
+ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:42:17-76
+	android:name
+		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:42:27-73

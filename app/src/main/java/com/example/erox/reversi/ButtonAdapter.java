@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.GridView;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
@@ -64,23 +63,22 @@ public class ButtonAdapter extends BaseAdapter {
         Button bn;
         if (convertView == null) {
             // if it's not recycled, initialize some attributes
-            if(nCols == 6) {
+            bn = new Button(mContext);
+            if(nCols == 6) {//Stetic if/else
 
-                bn = new Button(mContext);
-                bn.setLayoutParams(new GridView.LayoutParams(60, 60));
-                bn.setPadding(8, 8, 8, 8);
+                bn.setLayoutParams(new GridView.LayoutParams(80, 80));
 
             }else if(nCols == 8){
 
-                bn = new Button(mContext);
-                bn.setLayoutParams(new GridView.LayoutParams(50, 50));
-                bn.setPadding(8, 8, 8, 8);
+
+                bn.setLayoutParams(new GridView.LayoutParams(58, 58));
 
             }else{
-                bn = new Button(mContext);
-                bn.setLayoutParams(new GridView.LayoutParams(100, 100));
-                bn.setPadding(8, 8, 8, 8);
+
+                bn.setLayoutParams(new GridView.LayoutParams(120, 120));
+
             }
+            bn.setPadding(8, 8, 8, 8);
             int fila = position / nCols;
             int columna = position % nCols;
             decideButton(position,bn,fila,columna);
@@ -160,6 +158,7 @@ public class ButtonAdapter extends BaseAdapter {
             posibleMovesHorizontal();
             posibleMoveVertical();
             posibleDiagonalMoves();
+
             countTotal();
             contadorView.setText("Tu:" + nWhite +" ; "+ "Oponent: " + nBlack);
             emptyFields.setText(nEmpty + "  Caselles Pendents");
@@ -319,25 +318,31 @@ public class ButtonAdapter extends BaseAdapter {
             }
             return false;
         }
+
         private void countTotal(){
             nEmpty = 0;
             nWhite = 0;
             nBlack = 0;
             for (int x = 0; x < nCols; x++) {
                 for (int y = 0; y < nCols; y++) {
-                    if (mController.positions[x][y] == 0 || mController.positions[x][y] == 1) {
-                        nEmpty+=1;
-                    }else if(mController.positions[x][y] == 2){
-                        nWhite+=1;
-                    }else{
-                        nBlack+=1;
-                    }
+                    selectCounter(mController.positions[x][y]);
                 }
             }
         }
+
+        private void selectCounter(Integer integer) {
+            if (integer == 0 || integer == 1) {
+                nEmpty+=1;
+            }else if(integer == 2){
+                nWhite+=1;
+            }else{
+                nBlack+=1;
+            }
+        }
+
         private void searchDiagonals(int fila, int columna) {
-            for (int x = 1; x < nCols - 1; x++) {//Sud Est
-                if (nCols  > columna + x && nCols  > fila + x) {
+            for (int x = 0; x < nCols - 1; x++) {//Sud Est
+                if (nCols - 1 > columna + x && nCols - 1 > fila + x) {
                     if(mController.positions[fila + 1][columna + 1] == 3) {
                         if (mController.positions[fila + x][columna + x] == 2) {
                             int tmpfila = fila + x;
@@ -347,12 +352,14 @@ public class ButtonAdapter extends BaseAdapter {
                                 tmpfila--;
                                 tmpcolumna--;
                             }
+
                         }
                     }
                 }
             }
+
             for (int x = 0; x < nCols - 1; x++) {//Sud Oest
-                if (0 <= columna - x && nCols > fila + x) {
+                if (0 < columna - x && nCols > fila + x) {
                     if (mController.positions[fila + 1][columna - 1 ] == 3) {
                         if (mController.positions[fila + x][columna - x] == 2) {
                             int tmpfila = fila + x;
@@ -369,7 +376,7 @@ public class ButtonAdapter extends BaseAdapter {
             }
 
             for (int x = 0; x < nCols - 1; x++) {//Nord Est
-                if (nCols > columna - x && 0 <= fila - x) {
+                if ((nCols - 1) > columna - x && 0 < fila - x) {
                     if (mController.positions[fila - 1][columna + 1 ] == 3) {
                         if (mController.positions[fila - x][columna + x] == 2) {
                             int tmpfila = fila - x;
@@ -385,7 +392,7 @@ public class ButtonAdapter extends BaseAdapter {
                 }
             }
             for (int x = 1; x < nCols - 1; x++) {//Nord Oest
-                if (0<= columna - x && 0 <= fila - x) {
+                if (0< columna - x && 0 < fila - x) {
                     if(mController.positions[fila - 1][columna - 1] == 3) {
                         if (mController.positions[fila - x][columna - x] == 2) {
                             int tmpfila = fila - x;
@@ -403,7 +410,7 @@ public class ButtonAdapter extends BaseAdapter {
 
         private void searchVertical(int fila, int columna) {
             for (int x = 0; x < nCols - 1; x++) {//VERTICAL DAL-BAIX
-                if (nCols > fila + x) {//&& 0 <= (position + x) % nCols) {
+                if ((nCols - 1) > fila + x) {//&& 0 <= (position + x) % nCols) {
                     if(mController.positions[fila + 1][columna] == 3) {
                         if (mController.positions[fila + x][columna] == 2) {
                             for (int y = fila; y < fila + x; y++) {
@@ -429,18 +436,18 @@ public class ButtonAdapter extends BaseAdapter {
 
         private void searchHorizontal(int fila, int columna) {
             for (int x = 0; x < nCols - 1; x++) {//horitzontal dreta
-                if (nCols > columna + x) {//&& 0 <= (position + x) % nCols) {
+                if (nCols - 1> columna + x) {//&& 0 <= (position + x) % nCols) {
                     if(mController.positions[fila][columna + 1] == 3) {
                         if (mController.positions[fila][columna + x] == 2) {
                             for (int y = columna; y < columna + x; y++) {
                                 mController.positions[fila][y] = 2;
                             }
                         }
-                }
+                    }
                 }
             }
             for (int x = 0; x < nCols -1; x++) {//horitzontal ESQUERRA
-                if (0 < columna - x) {//&& 0 <= (position + x) % nCols) {
+                if (0 < columna - x) {
                     if(mController.positions[fila][columna - 1] == 3) {
                         if (mController.positions[fila][columna - x] == 2) {
                             for (int y = columna; y > columna - x; y--) {

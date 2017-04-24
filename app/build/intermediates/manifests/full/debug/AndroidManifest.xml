@@ -8,6 +8,8 @@
         android:minSdkVersion="15"
         android:targetSdkVersion="25" />
 
+    <uses-permission android:name="android.permission.SEND_SMS" />
+
     <application
         android:allowBackup="true"
         android:label="@string/app_name"
@@ -16,7 +18,7 @@
         <activity
             android:name="com.example.erox.reversi.MainActivity"
             android:icon="@drawable/riven"
-            android:label="PRINCIPAL" >
+            android:label="Reversi" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -39,6 +41,11 @@
             android:name="com.example.erox.reversi.ResultsActivity"
             android:icon="@drawable/set"
             android:label="RESULTADOS" >
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
     </application>
 
