@@ -20,13 +20,15 @@ public class DesarrolloActivity extends AppCompatActivity {
 
         Intent in = getIntent();
         Integer numCols = Integer.parseInt(in.getStringExtra("key").toString());
+        String Alias = in.getStringExtra("Alias");
+
         TextView timeView = (TextView) findViewById(R.id.TimeCounter);
         TextView emptyFields = (TextView) findViewById(R.id.BlocksLeft);
         TextView contadorView = (TextView) findViewById(R.id.Contador);
 
         GridView gridview = (GridView) findViewById(R.id.gridView);
         gridview.setNumColumns(numCols);
-        gridview.setAdapter( new ButtonAdapter(this,numCols));
+        gridview.setAdapter( new ButtonAdapter(this,numCols,timeView,emptyFields,contadorView));
 
     }
 

@@ -6,7 +6,7 @@
     density="hdpi"
     format="10"
     plugin-version="2.3.1"
-    timestamp="1493048398873"
+    timestamp="1493054470630"
     token="1263729258005237806"
     verifier="NO_CHANGES" >
 
@@ -25,7 +25,7 @@
 
     <build
         build-mode="FULL"
-        timestamp="1493047449202"
+        timestamp="1493051966592"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="D:\Android\AndroidStudioProjects\Reversi\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
@@ -65,96 +65,51 @@
             type="SPLIT_MAIN" />
     </build>
     <build
+        build-mode="COLD"
+        timestamp="1493053912973"
+        verifier="IMPLEMENTED_INTERFACES_CHANGE" >
+        <artifact
+            location="D:\Android\AndroidStudioProjects\Reversi\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        timestamp="1493053980379"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="D:\Android\AndroidStudioProjects\Reversi\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\Android\AndroidStudioProjects\Reversi\app\build\outputs\apk\app-debug.apk"
+            type="SPLIT_MAIN" />
+    </build>
+    <build
         build-mode="HOT_WARM"
-        timestamp="1493047607058"
+        timestamp="1493054026372"
         verifier="COMPATIBLE" >
         <artifact
-            location="D:\Android\AndroidStudioProjects\Reversi\app\build\intermediates\builds\debug\1493047607058\classes.dex"
+            location="D:\Android\AndroidStudioProjects\Reversi\app\build\intermediates\builds\debug\1493054026372\classes.dex"
             type="RELOAD_DEX" />
     </build>
     <build
         build-mode="HOT_WARM"
-        timestamp="1493047826172"
+        timestamp="1493054383822"
         verifier="COMPATIBLE" >
         <artifact
-            location="D:\Android\AndroidStudioProjects\Reversi\app\build\intermediates\builds\debug\1493047826172\classes.dex"
+            location="D:\Android\AndroidStudioProjects\Reversi\app\build\intermediates\builds\debug\1493054383822\classes.dex"
             type="RELOAD_DEX" />
     </build>
     <build
         build-mode="HOT_WARM"
-        timestamp="1493047934137"
+        timestamp="1493054465660"
         verifier="COMPATIBLE" >
         <artifact
-            location="D:\Android\AndroidStudioProjects\Reversi\app\build\intermediates\builds\debug\1493047934137\classes.dex"
+            location="D:\Android\AndroidStudioProjects\Reversi\app\build\intermediates\builds\debug\1493054465660\classes.dex"
             type="RELOAD_DEX" />
     </build>
     <build
         build-mode="HOT_WARM"
-        timestamp="1493047955759"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="D:\Android\AndroidStudioProjects\Reversi\app\build\intermediates\builds\debug\1493047955759\classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        build-mode="HOT_WARM"
-        timestamp="1493047976528"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="D:\Android\AndroidStudioProjects\Reversi\app\build\intermediates\builds\debug\1493047976528\classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        build-mode="HOT_WARM"
-        timestamp="1493048000296"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="D:\Android\AndroidStudioProjects\Reversi\app\build\intermediates\builds\debug\1493048000296\classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        build-mode="HOT_WARM"
-        timestamp="1493048004151"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="D:\Android\AndroidStudioProjects\Reversi\app\build\intermediates\builds\debug\1493048004151\classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        build-mode="HOT_WARM"
-        timestamp="1493048085110"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="D:\Android\AndroidStudioProjects\Reversi\app\build\intermediates\builds\debug\1493048085110\classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        build-mode="HOT_WARM"
-        timestamp="1493048124093"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="D:\Android\AndroidStudioProjects\Reversi\app\build\intermediates\builds\debug\1493048124093\classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        build-mode="HOT_WARM"
-        timestamp="1493048137355"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="D:\Android\AndroidStudioProjects\Reversi\app\build\intermediates\builds\debug\1493048137355\classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        build-mode="HOT_WARM"
-        timestamp="1493048387857"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="D:\Android\AndroidStudioProjects\Reversi\app\build\intermediates\builds\debug\1493048387857\classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        build-mode="HOT_WARM"
-        timestamp="1493048398873"
+        timestamp="1493054470630"
         verifier="NO_CHANGES" />
 
 </instant-run>

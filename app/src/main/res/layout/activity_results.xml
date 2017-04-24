@@ -26,6 +26,7 @@
         android:layout_height="wrap_content"
         android:text="@string/Log"/>
     <EditText
+        android:id="@+id/idLog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="@string/logHint"/>
@@ -35,6 +36,7 @@
         android:layout_height="wrap_content"
         android:text="@string/email"/>
     <EditText
+        android:id="@+id/emailEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="@string/edestin"/>

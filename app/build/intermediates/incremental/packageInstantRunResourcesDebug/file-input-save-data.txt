@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Mon Apr 24 16:03:00 CEST 2017
+#Mon Apr 24 19:12:07 CEST 2017
 210.set=ANDROID_RESOURCE
 14.set=ANDROID_RESOURCE
 180.file=D\:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-hdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png

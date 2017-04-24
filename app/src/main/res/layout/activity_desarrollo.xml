@@ -18,7 +18,7 @@
             android:id="@+id/BlocksLeft"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Caselles pendents                  "
+            android:text="Caselles pendents"
             android:drawableRight="@drawable/time2"
             android:gravity="center"/>
         <TextView

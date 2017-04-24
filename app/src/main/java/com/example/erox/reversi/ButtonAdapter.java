@@ -9,6 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 /**
  * Created by Erox on 20/04/2017.
@@ -20,13 +21,26 @@ public class ButtonAdapter extends BaseAdapter {
     private int nCols;
     private int time = 25;
     private MoveController mController;
+    private TextView timeView;
+    private TextView emptyFields;
+    private TextView contadorView;
+    private int nEmpty = 0;
+    private int nWhite = 0;
+    private int nBlack = 0;
 
-    public ButtonAdapter(Activity c, Integer numCols) {
+
+
+    public ButtonAdapter(Activity c, Integer numCols, TextView timeView, TextView emptyFields, TextView contadorView) {
         mContext = c;
         count = numCols * numCols;
         nCols = numCols;
         mController = new MoveController(numCols);
         mController.setArray();
+
+        this.timeView = timeView;
+        this.emptyFields = emptyFields;
+        this.contadorView = contadorView;
+        this.emptyFields.setText(count-4 + "  Caselles Pendents");
         //Pasarle las referencias a los TV para poder modificarlos.
         //Contador de fichas blancas i negras, como atributos de la classe, que se suman i restan cada vez que modifico una pieza
     }
@@ -51,6 +65,7 @@ public class ButtonAdapter extends BaseAdapter {
         if (convertView == null) {
             // if it's not recycled, initialize some attributes
             if(nCols == 6) {
+
                 bn = new Button(mContext);
                 bn.setLayoutParams(new GridView.LayoutParams(60, 60));
                 bn.setPadding(8, 8, 8, 8);
@@ -69,36 +84,36 @@ public class ButtonAdapter extends BaseAdapter {
             int fila = position / nCols;
             int columna = position % nCols;
             decideButton(position,bn,fila,columna);
-
+            contadorView.setText("Tu:" + nWhite +" ; "+ "Oponent: " + nBlack);
         } else {
 
             bn = (Button) convertView;
             int fila = position / nCols;
             int columna = position % nCols;
             decideButton(position,bn,fila,columna);
-
+            contadorView.setText("Tu:" + nWhite +" ; "+ "Oponent: " + nBlack);
         }
 
         return bn;
     }
 
     private void decideButton(int position, Button bn, int i, int j) {
-        //if (position == (j + (i * nCols))) {
 
             int num = mController.positions[i][j];
-
             //0 will be a normal position, 1 a posible position, 2 white, 3 black
             if (num == 0) {
 
                 bn.setBackgroundResource(R.drawable.button_normal);
                 bn.setOnClickListener(new MyOnClickListener(position));
                 bn.setClickable(false);
+                nEmpty +=1;
 
             } else if (num == 1) {
 
                 bn.setBackgroundResource(R.drawable.button_posible);
                 bn.setOnClickListener(new MyOnClickListener(position));
                 bn.setClickable(true);
+                nEmpty +=1;
 
             } else if (num == 2) {
 
@@ -113,7 +128,7 @@ public class ButtonAdapter extends BaseAdapter {
                 bn.setClickable(false);
 
             }
-        //}
+
     }
 
     private class MyOnClickListener implements View.OnClickListener {
@@ -125,7 +140,7 @@ public class ButtonAdapter extends BaseAdapter {
 
         @Override
         public void onClick(View v) {
-            //all the click IA somefunction(position)
+
             Button b = (Button) v;
             b.setBackgroundResource(R.drawable.button_white);
 
@@ -145,7 +160,9 @@ public class ButtonAdapter extends BaseAdapter {
             posibleMovesHorizontal();
             posibleMoveVertical();
             posibleDiagonalMoves();
-
+            countTotal();
+            contadorView.setText("Tu:" + nWhite +" ; "+ "Oponent: " + nBlack);
+            emptyFields.setText(nEmpty + "  Caselles Pendents");
             notifyDataSetChanged();
         }
 
@@ -302,7 +319,22 @@ public class ButtonAdapter extends BaseAdapter {
             }
             return false;
         }
-
+        private void countTotal(){
+            nEmpty = 0;
+            nWhite = 0;
+            nBlack = 0;
+            for (int x = 0; x < nCols; x++) {
+                for (int y = 0; y < nCols; y++) {
+                    if (mController.positions[x][y] == 0 || mController.positions[x][y] == 1) {
+                        nEmpty+=1;
+                    }else if(mController.positions[x][y] == 2){
+                        nWhite+=1;
+                    }else{
+                        nBlack+=1;
+                    }
+                }
+            }
+        }
         private void searchDiagonals(int fila, int columna) {
             for (int x = 1; x < nCols - 1; x++) {//Sud Est
                 if (nCols  > columna + x && nCols  > fila + x) {
