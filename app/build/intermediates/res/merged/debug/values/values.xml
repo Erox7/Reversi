@@ -454,7 +454,11 @@
     <string name="edestin">E-mail destí</string>
     <string name="email">E-mail Destinatari</string>
     <string name="greetings">Benvinguts al joc del REVERSI ! \n</string>
-    <string name="howToPlay">Hola</string>
+    <string name="howToPlay">El juego consiste en llenar el tablero con el máximo número de fichas de tu color (el negro), haciendo girar las fichas del oponente (la app), que son blancas. \ n
+    En cada turno, el jugador coloca una ficha en una casilla vacía, por lo que entre esta y otra del mismo color se rodea una o más fichas del oponente. Las fichas entre ambas quedan automáticamente convertidas al color de quien ha tirado. \ N
+    Las líneas cuentan en horizontal, diagonal y vertical. Una misma ficha puede capturar piezas en diferentes líneas, si consigue rodearlas de este mismo color. \ n
+    Si un jugador no puede colocar ninguna ficha de la manera descrita, pierde el turno. Sigue la alternancia hasta que ninguno de los dos puede colocar una ficha o bien todo el tablero ha quedado cubierto de fichas. \ n
+    Gana el jugador que ha conseguido colocar más fichas de su color.</string>
     <string name="logHint">Valors del Log</string>
     <string name="midaGrae">Mida Graella</string>
     <string name="newGame">Nova Partida</string>

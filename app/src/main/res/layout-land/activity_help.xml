@@ -11,9 +11,11 @@
         android:gravity="center"/>
 
     <TextView
+        android:id="@+id/scroll"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="82dp"
         android:text="@string/howToPlay"
+        android:scrollbars="vertical"
         android:gravity="center"/>
     <ImageView
         android:layout_width="match_parent"

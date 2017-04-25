@@ -56,6 +56,7 @@ public class ConfigActivity extends AppCompatActivity implements OnClickListener
             this.RG = (RadioGroup) findViewById(R.id.RadioGroup);
             this.RB = (RadioButton) findViewById(RG.getCheckedRadioButtonId());
             this.cb = (CheckBox) findViewById(R.id.checkbox);
+            this.et = (EditText) findViewById(R.id.editText);
 
             in.putExtra("CheckKey",cb.isChecked());
             in.putExtra("Alias", et.getText());

@@ -1,39 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
-    abi="x86"
-    api-level="25"
+    abi="arm64-v8a,armeabi-v7a,armeabi"
+    api-level="23"
     build-mode="COLD"
-    density="hdpi"
+    density="xxhdpi"
     format="10"
     plugin-version="2.3.1"
-    timestamp="1493139177022"
+    timestamp="1493154083430"
     token="1263729258005237806"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="191" />
+        duration="159" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="18" />
+        duration="20" />
     <task
         name="verifier"
-        duration="14" />
+        duration="1" />
 
     <artifact
         location="D:\Android\AndroidStudioProjects\Reversi\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
         type="SPLIT" />
+    <artifact
+        location="D:\Android\AndroidStudioProjects\Reversi\app\build\outputs\apk\app-debug.apk"
+        type="SPLIT_MAIN" />
 
     <build
         build-mode="FULL"
-        timestamp="1493138915504"
+        timestamp="1493153958935"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="D:\Android\AndroidStudioProjects\Reversi\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
             type="SPLIT" />
+        <artifact
+            location="D:\Android\AndroidStudioProjects\Reversi\app\build\outputs\apk\app-debug.apk"
+            type="SPLIT_MAIN" />
         <artifact
             location="D:\Android\AndroidStudioProjects\Reversi\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
             type="SPLIT" />
@@ -64,17 +70,17 @@
         <artifact
             location="D:\Android\AndroidStudioProjects\Reversi\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
             type="SPLIT" />
-        <artifact
-            location="D:\Android\AndroidStudioProjects\Reversi\app\build\outputs\apk\app-debug.apk"
-            type="SPLIT_MAIN" />
     </build>
     <build
         build-mode="COLD"
-        timestamp="1493139177022"
+        timestamp="1493154083430"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="D:\Android\AndroidStudioProjects\Reversi\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
             type="SPLIT" />
+        <artifact
+            location="D:\Android\AndroidStudioProjects\Reversi\app\build\outputs\apk\app-debug.apk"
+            type="SPLIT_MAIN" />
     </build>
 
 </instant-run>

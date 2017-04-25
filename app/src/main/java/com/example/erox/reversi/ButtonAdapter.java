@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import java.io.Serializable;
 
 /**
@@ -17,7 +18,8 @@ import java.io.Serializable;
  */
 
 public class ButtonAdapter extends BaseAdapter implements Serializable {
-    private final long time_start_activity;
+    private long time_start_activity;
+    private String alias;
     private Activity mContext;
     private int count;
     private int nCols;
@@ -34,11 +36,11 @@ public class ButtonAdapter extends BaseAdapter implements Serializable {
     private Boolean time_counter;
     private int puntx;
     private int punty;
+    private boolean checkEnd = false;
+    private String reasonWhy;
 
 
-
-
-    public ButtonAdapter(Activity c, Integer numCols, TextView timeView, TextView emptyFields, TextView contadorView, long l, Boolean count_timer, int puntx, int punty) {
+    public ButtonAdapter(Activity c, Integer numCols, TextView timeView, TextView emptyFields, TextView contadorView, long l, Boolean count_timer, int puntx, int punty, String alias) {
         mContext = c;
         count = numCols * numCols;
         nCols = numCols;
@@ -49,10 +51,11 @@ public class ButtonAdapter extends BaseAdapter implements Serializable {
         this.timeView = timeView;
         this.emptyFields = emptyFields;
         this.contadorView = contadorView;
-        this.emptyFields.setText(count-4 + "  Caselles Pendents");
+        this.emptyFields.setText(count - 4 + "  Caselles Pendents");
         this.time_counter = count_timer;
         this.puntx = puntx;
-        this.punty =  punty;
+        this.punty = punty;
+        this.alias = alias;
     }
 
     public int getCount() {
@@ -74,16 +77,16 @@ public class ButtonAdapter extends BaseAdapter implements Serializable {
         if (convertView == null) {
             // if it's not recycled, initialize some attributes
             bn = new Button(mContext);
-            if(nCols == 6) {//Stetic if/else
+            if (nCols == 6) {//Set correct params to a proper visualitation of the gridView.
 
                 bn.setLayoutParams(new GridView.LayoutParams(80, 80));
 
-            }else if(nCols == 8){
+            } else if (nCols == 8) {
 
 
                 bn.setLayoutParams(new GridView.LayoutParams(58, 58));
 
-            }else{
+            } else {
 
                 bn.setLayoutParams(new GridView.LayoutParams(120, 120));
 
@@ -91,21 +94,21 @@ public class ButtonAdapter extends BaseAdapter implements Serializable {
             bn.setPadding(8, 8, 8, 8);
             int fila = position / nCols;
             int columna = position % nCols;
-            decideButton(position,bn,fila,columna);
+            decideButton(position, bn, fila, columna);
 
         } else {
 
             bn = (Button) convertView;
             int fila = position / nCols;
             int columna = position % nCols;
-            decideButton(position,bn,fila,columna);
+            decideButton(position, bn, fila, columna);
         }
-        if(position == (getCount() - 1)){
-            if(time_counter) {
+        if (position == (getCount() - 1)) {
+            if (time_counter) {
                 time_end = (System.currentTimeMillis() / 1000);
                 timeControl();
                 countTotal();
-                contadorView.setText("Tu:" + nWhite +" ; "+ "Oponent: " + nBlack);
+                contadorView.setText("Tu:" + nWhite + " ; " + "Oponent: " + nBlack);
             }
 
         }
@@ -114,35 +117,35 @@ public class ButtonAdapter extends BaseAdapter implements Serializable {
 
     private void decideButton(int position, Button bn, int i, int j) {
 
-            int num = mController.positions[i][j];
-            //0 will be a normal position, 1 a posible position, 2 white, 3 black
-            if (num == 0) {
+        int num = mController.positions[i][j];
+        //0 will be a normal position, 1 a posible position, 2 white, 3 black
+        if (num == 0) {
 
-                bn.setBackgroundResource(R.drawable.button_normal);
-                bn.setOnClickListener(new MyOnClickListener(position));
-                bn.setClickable(false);
-                nEmpty +=1;
+            bn.setBackgroundResource(R.drawable.button_normal);
+            bn.setOnClickListener(new MyOnClickListener(position));
+            bn.setClickable(false);
+            nEmpty += 1;
 
-            } else if (num == 1) {
+        } else if (num == 1) {
 
-                bn.setBackgroundResource(R.drawable.button_posible);
-                bn.setOnClickListener(new MyOnClickListener(position));
-                bn.setClickable(true);
-                nEmpty +=1;
+            bn.setBackgroundResource(R.drawable.button_posible);
+            bn.setOnClickListener(new MyOnClickListener(position));
+            bn.setClickable(true);
+            nEmpty += 1;
 
-            } else if (num == 2) {
+        } else if (num == 2) {
 
-                bn.setBackgroundResource(R.drawable.button_white);
-                bn.setOnClickListener(new MyOnClickListener(position));
-                bn.setClickable(false);
+            bn.setBackgroundResource(R.drawable.button_white);
+            bn.setOnClickListener(new MyOnClickListener(position));
+            bn.setClickable(false);
 
-            } else if (num == 3) {
+        } else if (num == 3) {
 
-                bn.setBackgroundResource(R.drawable.button_black);
-                bn.setOnClickListener(new MyOnClickListener(position));
-                bn.setClickable(false);
+            bn.setBackgroundResource(R.drawable.button_black);
+            bn.setOnClickListener(new MyOnClickListener(position));
+            bn.setClickable(false);
 
-            }
+        }
 
     }
 
@@ -153,11 +156,12 @@ public class ButtonAdapter extends BaseAdapter implements Serializable {
         public MyOnClickListener(int position) {
             this.position = position;
         }
-        //Control de tiempo inactivo
+
+
         @Override
         public void onClick(View v) {
 
-            if(time_counter) {
+            if (time_counter) {
                 time_end = (System.currentTimeMillis() / 1000);
                 timeControl();
             }
@@ -171,30 +175,31 @@ public class ButtonAdapter extends BaseAdapter implements Serializable {
 
             //En les seguents funcions, fila i columna son la posició del click
             // el primer int es el turno actual, i el 2n el que descanse
-            if(checkPosibleMoves()) {
-                searchHorizontal(fila, columna, 2, 3);
-                searchVertical(fila, columna, 2, 3);
-                searchDiagonals(fila, columna, 2, 3);
-            }
+
+            searchHorizontal(fila, columna, 2, 3);
+            searchVertical(fila, columna, 2, 3);
+            searchDiagonals(fila, columna, 2, 3);
+
             //Actualitzar els posibles moviments, primer borren els vells
             resetPosibleMoves();
-
             //posibles moviments
             //En les seguents funcions, el primer int es el turno actual, i el 2n el que descanse
             posibleMovesHorizontal(3, 2);
             posibleMoveVertical(3, 2);
             posibleDiagonalMoves(3, 2);
 
-
             blackMove();
 
-            while(!checkPosibleMoves()){
+            while (!checkPosibleMoves() && !checkEnd) {
                 //Trabajo del negro, pero al acabar vuelvo a reiniciar el array
                 blackMoveInBucle();
 
             }
+            if(checkEnd){
+                tryToEndOut();
+            }
             countTotal();
-            contadorView.setText("Tu:" + nWhite +" ; "+ "Oponent: " + nBlack);
+            contadorView.setText("Tu:" + nWhite + " ; " + "Oponent: " + nBlack);
             emptyFields.setText(nEmpty + "  Caselles Pendents");
             notifyDataSetChanged();
         }
@@ -205,7 +210,7 @@ public class ButtonAdapter extends BaseAdapter implements Serializable {
             posibleMoveVertical(3, 2);
             posibleDiagonalMoves(3, 2);
 
-            if(checkPosibleMoves()) {
+            if (checkPosibleMoves()) {
                 millorjugada();
                 searchHorizontal(puntx, punty, 3, 2);
                 searchVertical(puntx, punty, 3, 2);
@@ -215,53 +220,59 @@ public class ButtonAdapter extends BaseAdapter implements Serializable {
                 posibleMovesHorizontal(2, 3);
                 posibleMoveVertical(2, 3);
                 posibleDiagonalMoves(2, 3);
-            }else{
-                if(checkForEmptySpaces()) {
-                    Toast.makeText(mContext, "Not more moves for both players", Toast.LENGTH_SHORT).show();
-                    Intent in = new Intent(mContext, ResultsActivity.class);
-                    mContext.startActivity(in);
-                    mContext.finish();
-                }else {
-                    if(nWhite > nBlack) {
-                        Toast.makeText(mContext, "YOU WIN BRO!", Toast.LENGTH_SHORT).show();
-                        Intent in = new Intent(mContext, ResultsActivity.class);
-                        mContext.startActivity(in);
-                        mContext.finish();
-                    }else if(nWhite < nBlack){
-                        Toast.makeText(mContext, "LOSER", Toast.LENGTH_SHORT).show();
-                        Intent in = new Intent(mContext, ResultsActivity.class);
-                        mContext.startActivity(in);
-                        mContext.finish();
-                    }else{
-                        Toast.makeText(mContext, "DRAW", Toast.LENGTH_SHORT).show();
-                        Intent in = new Intent(mContext, ResultsActivity.class);
-                        mContext.startActivity(in);
-                        mContext.finish();
+
+            } else {
+                countTotal();
+                if (checkForEmptySpaces()) {
+                    reasonWhy ="NoMoves";
+
+                } else {
+                    if (nWhite > nBlack) {
+
+                        reasonWhy = "YouWin";
+
+                    } else if (nWhite < nBlack) {
+
+                        reasonWhy = "YouLose";
+
+                    } else if(nWhite == nBlack){
+                        reasonWhy = "Draw";
+
                     }
                 }
+                checkEnd = true;
             }
-
-
         }
 
+
+
         private void blackMove() {
-            if(checkPosibleMoves()) {
+            if (checkPosibleMoves()) {
 
                 millorjugada();
                 searchHorizontal(puntx, punty, 3, 2);
                 searchVertical(puntx, punty, 3, 2);
                 searchDiagonals(puntx, punty, 3, 2);
+
+                resetPosibleMoves();
+                posibleMovesHorizontal(2, 3);
+                posibleMoveVertical(2, 3);
+                posibleDiagonalMoves(2, 3);
+
+            } else{
+
+                resetPosibleMoves();
+                posibleMovesHorizontal(2, 3);
+                posibleMoveVertical(2, 3);
+                posibleDiagonalMoves(2, 3);
             }
-            resetPosibleMoves();
-            posibleMovesHorizontal(2, 3);
-            posibleMoveVertical(2, 3);
-            posibleDiagonalMoves(2, 3);
+
         }
 
         private boolean checkForEmptySpaces() {
             for (int x = 0; x < nCols; x++) {
                 for (int y = 0; y < nCols; y++) {
-                    if(mController.positions[x][y] == 0){
+                    if (mController.positions[x][y] == 0) {
                         return true;
                     }
                 }
@@ -274,18 +285,18 @@ public class ButtonAdapter extends BaseAdapter implements Serializable {
             for (int x = 0; x < nCols; x++) {//posiblesa diagonal dal baix esquerra-dreta
                 for (int y = 0; y < nCols; y++) {
                     int suma = 0;
-                    if(mController.positions[x][y] == 1){
+                    if (mController.positions[x][y] == 1) {
                         int cont = 0;
                         boolean trovada = false;
 
-                        for(int i = x; i< nCols; i++) {//vertical baix
+                        for (int i = x + 1; i < nCols; i++) {//vertical baix
                             if (mController.positions[i][y] == 2) {
                                 trovada = true;
                                 cont = cont + 1;
-                            }else if (mController.positions[i][y] == 3 && trovada == true) {
+                            } else if (mController.positions[i][y] == 3 && trovada == true) {
                                 suma = suma + cont;
                                 break;
-                            }else if ( trovada == false && mController.positions[i][y] != 2){
+                            } else if (trovada == false && mController.positions[i][y] != 2) {
                                 break;
                             }
                         }
@@ -293,14 +304,14 @@ public class ButtonAdapter extends BaseAdapter implements Serializable {
                         cont = 0;
                         trovada = false;
 
-                        for(int i = x; i >= 0; i--) {//vertical dal
+                        for (int i = x - 1; i >= 0; i--) {//vertical dal
                             if (mController.positions[i][y] == 2) {
                                 trovada = true;
                                 cont = cont + 1;
-                            }else if (mController.positions[i][y] == 3 && trovada == true) {
+                            } else if (mController.positions[i][y] == 3 && trovada == true) {
                                 suma = suma + cont;
                                 break;
-                            }else if ( trovada == false && mController.positions[i][y] != 2){
+                            } else if (trovada == false && mController.positions[i][y] != 2) {
                                 break;
                             }
                         }
@@ -308,7 +319,7 @@ public class ButtonAdapter extends BaseAdapter implements Serializable {
                         cont = 0;
                         trovada = false;
 
-                        for(int i = x; i< nCols; i++) {//hortizontal dreta
+                        for (int i = y + 1; i < nCols; i++) {//hortizontal dreta
                             if (mController.positions[x][i] == 2) {
                                 trovada = true;
                                 cont = cont + 1;
@@ -322,14 +333,14 @@ public class ButtonAdapter extends BaseAdapter implements Serializable {
                         cont = 0;
                         trovada = false;
 
-                        for(int i = x; i >= 0; i--) {//horitzontal esquerra
+                        for (int i = y - 1; i >= 0; i--) {//horitzontal esquerra
                             if (mController.positions[x][i] == 2) {
                                 trovada = true;
                                 cont = cont + 1;
-                            }else if (mController.positions[x][i] == 3 && trovada == true) {
+                            } else if (mController.positions[x][i] == 3 && trovada == true) {
                                 suma = suma + cont;
                                 break;
-                            }else if ( trovada == false && mController.positions[x][i] != 2){
+                            } else if (trovada == false && mController.positions[x][i] != 2) {
                                 break;
                             }
                         }
@@ -337,74 +348,77 @@ public class ButtonAdapter extends BaseAdapter implements Serializable {
                         cont = 0;
                         trovada = false;
 
-                        for(int i = 1; i < nCols; i++) {//diagonal dal baix dreta esquerra
-                            if( x + i < nCols && y + i < nCols){
-                                if (mController.positions[x+i][y+i] == 2) {
+                        for (int i = 1; i < nCols; i++) {//diagonal dal baix dreta esquerra
+                            if (x + i < nCols && y + i < nCols) {
+                                if (mController.positions[x + i][y + i] == 2) {
                                     trovada = true;
                                     cont = cont + 1;
-                                }else if (mController.positions[x+i][y+i] == 3 && trovada == true) {
+                                } else if (mController.positions[x + i][y + i] == 3 && trovada == true) {
                                     suma = suma + cont;
                                     break;
-                                }else if ( trovada == false && mController.positions[x+i][y+i] != 2){
+                                } else if (trovada == false && mController.positions[x + i][y + i] != 2) {
                                     break;
                                 }
-                            }else{
+                            } else {
                                 break;
                             }
                         }
                         cont = 0;
                         trovada = false;
 
-                        for(int i = 1; i < nCols; i++) {//diagonal baix dal  esquerra dreta
-                            if( x - i >= 0 && y - i >= 0){
-                                if (mController.positions[x-i][y-i] == 2) {
+                        for (int i = 1; i < nCols; i++) {//diagonal baix dal  esquerra dreta
+                            if (x - i >= 0 && y - i >= 0) {
+                                if (mController.positions[x - i][y - i] == 2) {
                                     trovada = true;
                                     cont = cont + 1;
-                                }else if (mController.positions[x-i][y-i] == 3 && trovada == true) {
+                                } else if (mController.positions[x - i][y - i] == 3 && trovada == true) {
                                     suma = suma + cont;
                                     break;
-                                }else if ( trovada == false && mController.positions[x-i][y-i] != 2){
+                                } else if (trovada == false && mController.positions[x - i][y - i] != 2) {
                                     break;
                                 }
-                            }else{
+                            } else {
                                 break;
                             }
                         }
                         cont = 0;
                         trovada = false;
 
-                        for(int i = 1; i < nCols; i++) {//diagonal dal baix  esquerra dreta
-                            if( x + i < nCols && y - i >= 0){
-                                if (mController.positions[x+i][y-i] == 2) {
+                        for (int i = 1; i < nCols; i++) {//diagonal dal baix  esquerra dreta
+                            if (x + i < nCols && y - i >= 0) {
+                                if (mController.positions[x + i][y - i] == 2) {
                                     trovada = true;
                                     cont = cont + 1;
-                                }else if (mController.positions[x+i][y-i] == 3 && trovada == true) {
+                                } else if (mController.positions[x + i][y - i] == 3 && trovada == true) {
                                     suma = suma + cont;
                                     break;
-                                }else if ( trovada == false && mController.positions[x+i][y-i] != 2){
+                                } else if (trovada == false && mController.positions[x + i][y - i] != 2) {
                                     break;
                                 }
-                            }else{
+                            } else {
                                 break;
                             }
                         }
-                        for(int i = 1; i < nCols; i++) {//diagonal  baix dal esquerra dreta
-                            if( x - i >= 0 && y + i < nCols){
-                                if (mController.positions[x-i][y+i] == 2) {
+                        cont = 0;
+                        trovada = false;
+
+                        for (int i = 1; i < nCols; i++) {//diagonal  baix dal esquerra dreta
+                            if (x - i >= 0 && y + i < nCols) {
+                                if (mController.positions[x - i][y + i] == 2) {
                                     trovada = true;
                                     cont = cont + 1;
-                                }else if (mController.positions[x-i][y+i] == 3 && trovada == true) {
+                                } else if (mController.positions[x - i][y + i] == 3 && trovada == true) {
                                     suma = suma + cont;
                                     break;
-                                }else if ( trovada == false && mController.positions[x-i][y+i] != 2){
+                                } else if (trovada == false && mController.positions[x - i][y + i] != 2) {
                                     break;
                                 }
-                            }else{
+                            } else {
                                 break;
                             }
                         }
 
-                        if(suma >= max){//sustituim si es mes gran
+                        if (suma > max) {//sustituim si es mes gran
                             max = suma;
                             puntx = x;
                             punty = y;
@@ -412,7 +426,6 @@ public class ButtonAdapter extends BaseAdapter implements Serializable {
                     }
                 }
             }
-            Toast.makeText(mContext, "MAX : " + max +"PUNTX : " + puntx + "PUNT Y: " + punty, Toast.LENGTH_SHORT).show();
         }
 
         private void posibleMoveVertical(int turno, int descans) {
@@ -421,31 +434,29 @@ public class ButtonAdapter extends BaseAdapter implements Serializable {
             for (int x = 0; x < nCols; x++) {//posiblesa vertical
                 for (int y = 0; y < nCols; y++) {
                     if (mController.positions[x][y] == turno) {
-                        //if(x+1 < nCols && mController.positions[x + 1][y] == 3) {
                         for (int i = x; i < nCols; i++) {//buscan dal-baix
                             if (mController.positions[i][y] == descans) {
                                 ntrovada = true;
-                            } else if (mController.positions[i][y] == 0 && ntrovada == true && i > 0 && mController.positions[i-1][y] == descans) {
+                            } else if (mController.positions[i][y] == 0 && ntrovada == true && i > 0 && mController.positions[i - 1][y] == descans) {
                                 mController.positions[i][y] = 1;
                                 break;
-                            } else if (mController.positions[i][y] == 0 && ntrovada == false){//si despres de la blanca hiha un espai buit pasem
+                            } else if (mController.positions[i][y] == 0 && ntrovada == false) {//si despres de la blanca hiha un espai buit pasem
                                 break;
-                            } else if (mController.positions[i][y] == 1 ) {
+                            } else if (mController.positions[i][y] == 1) {
                                 break;
                             }
                             //}
                         }
                         ntrovada = false;
-                        //if(x > 0 && mController.positions[x - 1][y] == 3) {
                         for (int i = x; i >= 0; i--) {//buscan baix-dal
                             if (mController.positions[i][y] == descans) {
                                 ntrovada = true;
-                            } else if (mController.positions[i][y] == 0 && ntrovada == true && i+1 < nCols && mController.positions[i+1][y] == descans) {
+                            } else if (mController.positions[i][y] == 0 && ntrovada == true && i + 1 < nCols && mController.positions[i + 1][y] == descans) {
                                 mController.positions[i][y] = 1;
                                 break;
-                            } else if (mController.positions[i][y] == 0 && ntrovada == false){
+                            } else if (mController.positions[i][y] == 0 && ntrovada == false) {
                                 break;
-                            } else if (mController.positions[i][y] == 1 ) {
+                            } else if (mController.positions[i][y] == 1) {
                                 break;
                             }
                             //}
@@ -462,32 +473,32 @@ public class ButtonAdapter extends BaseAdapter implements Serializable {
             for (int x = 0; x < nCols; x++) {//posiblesa horitzontal
                 for (int y = 0; y < nCols; y++) {
                     if (mController.positions[x][y] == turno) {
-                        if(y < nCols -1 && mController.positions[x][y + 1] == descans) {
+                        if (y < nCols - 1 && mController.positions[x][y + 1] == descans) {
                             for (int i = y; i < nCols; i++) {//buscan cap a dreta
                                 if (mController.positions[x][i] == descans) {
                                     ntrovada = true;
-                                } else if (mController.positions[x][i] == 0 && ntrovada == true && i > 0 && mController.positions[x][i-1] == descans) {
+                                } else if (mController.positions[x][i] == 0 && ntrovada == true && i > 0 && mController.positions[x][i - 1] == descans) {
                                     mController.positions[x][i] = 1;
                                     break;
-                                } else if (mController.positions[x][i] == 0 && ntrovada == false){
+                                } else if (mController.positions[x][i] == 0 && ntrovada == false) {
                                     break;
-                                } else if (mController.positions[x][i] == 1 ) {
+                                } else if (mController.positions[x][i] == 1) {
                                     break;
                                 }
                             }
                         }
                         ntrovada = false;
 
-                        if(y > 0 && mController.positions[x][y - 1] == descans) {
+                        if (y > 0 && mController.positions[x][y - 1] == descans) {
                             for (int i = y; i >= 0; i--) {//buscan cap a esquerra
                                 if (mController.positions[x][i] == descans) {
                                     ntrovada = true;
-                                } else if (mController.positions[x][i] == 0 && ntrovada == true && i+1 < nCols && mController.positions[x][i+1] == descans) {
+                                } else if (mController.positions[x][i] == 0 && ntrovada == true && i + 1 < nCols && mController.positions[x][i + 1] == descans) {
                                     mController.positions[x][i] = 1;
                                     break;
-                                } else if (mController.positions[x][i] == 0 && ntrovada == false){
+                                } else if (mController.positions[x][i] == 0 && ntrovada == false) {
                                     break;
-                                } else if (mController.positions[x][i] == 1 ) {
+                                } else if (mController.positions[x][i] == 1) {
                                     break;
                                 }
                             }
@@ -498,6 +509,7 @@ public class ButtonAdapter extends BaseAdapter implements Serializable {
                 }
             }
         }
+
         private void posibleDiagonalMoves(int turno, int descans) {
             boolean ntrovada;
             //diagonals
@@ -509,12 +521,12 @@ public class ButtonAdapter extends BaseAdapter implements Serializable {
                             if (x + i < nCols && y + i < nCols) {//mirem si existeix la posicio
                                 if (mController.positions[x + i][y + i] == descans) {
                                     ntrovada = true;
-                                } else if (mController.positions[x + i][y + i] == 0 && ntrovada == true && i > 0 && mController.positions[x + i-1][y + i - 1] == descans){
+                                } else if (mController.positions[x + i][y + i] == 0 && ntrovada == true && i > 0 && mController.positions[x + i - 1][y + i - 1] == descans) {
                                     mController.positions[x + i][y + i] = 1;
                                     break;
-                                } else if (mController.positions[x + i][y + i] == 0 && ntrovada == false){
+                                } else if (mController.positions[x + i][y + i] == 0 && ntrovada == false) {
                                     break;
-                                } else if (mController.positions[x + i][y + i] == 1 ) {
+                                } else if (mController.positions[x + i][y + i] == 1) {
                                     break;
                                 }
                             }
@@ -524,12 +536,12 @@ public class ButtonAdapter extends BaseAdapter implements Serializable {
                             if (x - i >= 0 && y - i >= 0) {//mirem si existeix la posicio
                                 if (mController.positions[x - i][y - i] == descans) {
                                     ntrovada = true;
-                                } else if (mController.positions[x - i][y - i] == 0 && ntrovada == true && i+1 < nCols && mController.positions[x - i+1][y - i + 1] == descans) {
+                                } else if (mController.positions[x - i][y - i] == 0 && ntrovada == true && i + 1 < nCols && mController.positions[x - i + 1][y - i + 1] == descans) {
                                     mController.positions[x - i][y - i] = 1;
                                     break;
-                                } else if (mController.positions[x - i][y - i] == 0 && ntrovada == false){
+                                } else if (mController.positions[x - i][y - i] == 0 && ntrovada == false) {
                                     break;
-                                } else if (mController.positions[x - i][y - i] == 1 ) {
+                                } else if (mController.positions[x - i][y - i] == 1) {
                                     break;
                                 }
                             }
@@ -539,12 +551,12 @@ public class ButtonAdapter extends BaseAdapter implements Serializable {
                             if (x - i >= 0 && y + i < nCols) {//mirem si existeix la posicio
                                 if (mController.positions[x - i][y + i] == descans) {
                                     ntrovada = true;
-                                } else if (mController.positions[x - i][y + i] == 0 && ntrovada == true && i+1 < nCols && i > 0 && mController.positions[x - i+1][y + i-1] == descans) {
+                                } else if (mController.positions[x - i][y + i] == 0 && ntrovada == true && i + 1 < nCols && i > 0 && mController.positions[x - i + 1][y + i - 1] == descans) {
                                     mController.positions[x - i][y + i] = 1;
                                     break;
-                                } else if (mController.positions[x - i][y + i] == 0 && ntrovada == false){
+                                } else if (mController.positions[x - i][y + i] == 0 && ntrovada == false) {
                                     break;
-                                } else if (mController.positions[x - i][y + i] == 1 ) {
+                                } else if (mController.positions[x - i][y + i] == 1) {
                                     break;
                                 }
                             }
@@ -554,12 +566,12 @@ public class ButtonAdapter extends BaseAdapter implements Serializable {
                             if (x + i < nCols && y - i >= 0) {//mirem si existeix la posicio
                                 if (mController.positions[x + i][y - i] == descans) {
                                     ntrovada = true;
-                                } else if (mController.positions[x + i][y - i] == 0 && ntrovada == true && i+1 < nCols && i > 0 && mController.positions[x + i-1][y - i+1] == descans) {
+                                } else if (mController.positions[x + i][y - i] == 0 && ntrovada == true && i + 1 < nCols && i > 0 && mController.positions[x + i - 1][y - i + 1] == descans) {
                                     mController.positions[x + i][y - i] = 1;
                                     break;
-                                } else if (mController.positions[x + i][y - i] == 0 && ntrovada == false){
+                                } else if (mController.positions[x + i][y - i] == 0 && ntrovada == false) {
                                     break;
-                                } else if (mController.positions[x + i][y - i] == 1 ) {
+                                } else if (mController.positions[x + i][y - i] == 1) {
                                     break;
                                 }
                             }
@@ -595,71 +607,71 @@ public class ButtonAdapter extends BaseAdapter implements Serializable {
         private void searchDiagonals(int fila, int columna, int turno, int descans) {
             mController.positions[fila][columna] = turno;
 
-            if((fila + 1)  < nCols && (columna + 1) < nCols && mController.positions[fila + 1][columna + 1] == descans) {
+            if ((fila + 1) < nCols && (columna + 1) < nCols && mController.positions[fila + 1][columna + 1] == descans) {
                 for (int x = 0; x < nCols - 1; x++) {//Sud Est
-                     if (nCols > columna + x && nCols > fila + x) {
+                    if (nCols > columna + x && nCols > fila + x) {
                         if (mController.positions[fila + x][columna + x] == turno) {
                             int tmpfila = fila + x;
                             int tmpcolumna = columna + x;
-                            while(tmpfila > fila && tmpcolumna > columna){
+                            while (tmpfila > fila && tmpcolumna > columna) {
                                 mController.positions[tmpfila][tmpcolumna] = turno;
                                 tmpfila--;
                                 tmpcolumna--;
                             }
-                        }else if(mController.positions[fila + x][columna + x] == 0 || mController.positions[fila + x][columna + x] == 1){
+                        } else if (mController.positions[fila + x][columna + x] == 0 || mController.positions[fila + x][columna + x] == 1) {
                             break;
                         }
                     }
                 }
             }
-            if (nCols > (fila + 1) && 0 < columna && mController.positions[fila + 1][columna - 1 ] == descans) {
-             for (int x = 0; x < nCols - 1; x++) {//Sud Oest
+            if (nCols > (fila + 1) && 0 < columna && mController.positions[fila + 1][columna - 1] == descans) {
+                for (int x = 0; x < nCols - 1; x++) {//Sud Oest
                     if (0 <= columna - x && nCols > fila + x) {
                         if (mController.positions[fila + x][columna - x] == turno) {
                             int tmpfila = fila + x;
                             int tmpcolumna = columna - x;
-                            while(tmpfila > fila && tmpcolumna < columna){
+                            while (tmpfila > fila && tmpcolumna < columna) {
                                 mController.positions[tmpfila][tmpcolumna] = turno;
                                 tmpfila--;
                                 tmpcolumna++;
                             }
-                        }else if(mController.positions[fila + x][columna - x] == 0 || mController.positions[fila + x][columna - x] == 1){
+                        } else if (mController.positions[fila + x][columna - x] == 0 || mController.positions[fila + x][columna - x] == 1) {
                             break;
                         }
 
                     }
                 }
             }
-            if (fila > 0 && nCols > (columna + 1) && mController.positions[fila - 1][columna + 1 ] == descans) {
+            if (fila > 0 && nCols > (columna + 1) && mController.positions[fila - 1][columna + 1] == descans) {
                 for (int x = 0; x < nCols; x++) {//Nord Est
                     if (nCols > columna + x && 0 <= fila - x) {
                         if (mController.positions[fila - x][columna + x] == turno) {
                             int tmpfila = fila - x;
                             int tmpcolumna = columna + x;
-                            while(tmpfila < fila && tmpcolumna > columna){
+                            while (tmpfila < fila && tmpcolumna > columna) {
                                 mController.positions[tmpfila][tmpcolumna] = turno;
                                 tmpfila++;
                                 tmpcolumna--;
                             }
-                        }else if(mController.positions[fila - x][columna + x] == 0 || mController.positions[fila - x][columna + x] == 1){
+                        } else if (mController.positions[fila - x][columna + x] == 0 || mController.positions[fila - x][columna + x] == 1) {
                             break;
                         }
 
                     }
                 }
             }
-            if(fila > 0 && columna > 0 && mController.positions[fila - 1][columna - 1] == descans) {
-                for (int x = 0; x < nCols - 1; x++) {//Nord Oest
+            if (fila > 0 && columna > 0 && mController.positions[fila - 1][columna - 1] == descans) {
+                for (int x = 0; x < nCols ; x++) {//Nord Oest
                     if (0 <= columna - x && 0 <= fila - x) {
                         if (mController.positions[fila - x][columna - x] == turno) {
                             int tmpfila = fila - x;
                             int tmpcolumna = columna - x;
-                            while(tmpfila < fila && tmpcolumna < columna){
+                            while (tmpfila < fila && tmpcolumna < columna) {
                                 mController.positions[tmpfila][tmpcolumna] = turno;
                                 tmpfila++;
                                 tmpcolumna++;
                             }
-                        }else if(mController.positions[fila - x][columna - x] == 0 || mController.positions[fila - x][columna - x] == 1){
+                        } else if (mController.positions[fila - x][columna - x] == 0 || mController.positions[fila - x][columna - x] == 1) {
                             break;
                         }
                     }
@@ -669,28 +681,28 @@ public class ButtonAdapter extends BaseAdapter implements Serializable {
 
         private void searchVertical(int fila, int columna, int turno, int descans) {
             mController.positions[fila][columna] = turno;
-            if((fila + 1 ) < nCols && mController.positions[fila + 1][columna] == descans) {
+            if ((fila + 1) < nCols && mController.positions[fila + 1][columna] == descans) {
                 for (int x = 0; x < nCols; x++) {//SUD
                     if (nCols > fila + x) {
                         if (mController.positions[fila + x][columna] == turno) {
                             for (int y = fila; y < fila + x; y++) {
                                 mController.positions[y][columna] = turno;
                             }
-                        }else if(mController.positions[fila + x][columna] == 0 || mController.positions[fila + x][columna] == 1){
+                        } else if (mController.positions[fila + x][columna] == 0 || mController.positions[fila + x][columna] == 1) {
                             break;
                         }
                     }
                 }
             }
-            if(fila > 0 && mController.positions[fila - 1][columna] == descans) {
+            if (fila > 0 && mController.positions[fila - 1][columna] == descans) {
                 for (int x = 0; x < nCols; x++) {//NORD
                     if (0 <= fila - x) {
                         if (mController.positions[fila - x][columna] == turno) {
                             for (int y = fila; y > fila - x; y--) {
                                 mController.positions[y][columna] = turno;
                             }
-                        }else if(mController.positions[fila - x][columna] == 0 || mController.positions[fila - x][columna] == 1){
-                             break;
+                        } else if (mController.positions[fila - x][columna] == 0 || mController.positions[fila - x][columna] == 1) {
+                            break;
                         }
                     }
                 }
@@ -700,27 +712,27 @@ public class ButtonAdapter extends BaseAdapter implements Serializable {
 
         private void searchHorizontal(int fila, int columna, int turno, int descans) {
             mController.positions[fila][columna] = turno;
-            if((columna + 1) < nCols && mController.positions[fila][columna + 1] == descans) {
+            if ((columna + 1) < nCols && mController.positions[fila][columna + 1] == descans) {
                 for (int x = 0; x < nCols; x++) {//EST
                     if (nCols > columna + x) {
                         if (mController.positions[fila][columna + x] == turno) {
                             for (int y = columna; y < columna + x; y++) {
                                 mController.positions[fila][y] = turno;
                             }
-                        }else if(mController.positions[fila][columna + x] == 0 || mController.positions[fila][columna + x] == 1){
+                        } else if (mController.positions[fila][columna + x] == 0 || mController.positions[fila][columna + x] == 1) {
                             break;
                         }
                     }
                 }
             }
-            if(columna > 0 && mController.positions[fila][columna - 1] == descans) {
-                for (int x = 0; x < nCols -1; x++) {//OEST
+            if (columna > 0 && mController.positions[fila][columna - 1] == descans) {
+                for (int x = 0; x < nCols - 1; x++) {//OEST
                     if (0 <= columna - x) {
                         if (mController.positions[fila][columna - x] == turno) {
                             for (int y = columna; y > columna - x; y--) {
                                 mController.positions[fila][y] = turno;
                             }
-                        }else if(mController.positions[fila][columna - x] == 0 || mController.positions[fila][columna - x] == 1){
+                        } else if (mController.positions[fila][columna - x] == 0 || mController.positions[fila][columna - x] == 1) {
                             break;
                         }
                     }
@@ -728,16 +740,46 @@ public class ButtonAdapter extends BaseAdapter implements Serializable {
             }
         }
     }
+
+    private void tryToEndOut() {
+
+        time_start_activity =  (System.currentTimeMillis() / 1000) - time_start_activity;
+        String log = "Alias: " + alias + "Mida Graella: " + nCols + "TempsTotal: " + time_start_activity;
+
+        if (reasonWhy.equals("NoMoves")) {
+            Toast.makeText(mContext, "Not more moves for both players", Toast.LENGTH_SHORT).show();
+
+        } else if(reasonWhy.equals("YouWin")) {
+            Toast.makeText(mContext, "YOU WIN!", Toast.LENGTH_SHORT).show();
+            log += "Has guanyat! Tu: " + nWhite + "Oponent: " + nBlack + ";" + (nWhite-nBlack)+
+                "Caselles de diferencia! :o";
+
+        } else if(reasonWhy.equals("YouLose")) {
+            Toast.makeText(mContext, "YOU LOSE!", Toast.LENGTH_SHORT).show();
+            log += "Has perdut! Oponent: " + nBlack + "Tu: " + nWhite + ";" + (nBlack-nWhite)+
+                    "Caselles de diferencia! :o";
+
+        } else if(reasonWhy.equals("Draw")) {
+            Toast.makeText(mContext, "Its a Draw!", Toast.LENGTH_SHORT).show();
+            log += "Heu empatat!!";
+        }
+
+        Intent in = new Intent(mContext, ResultsActivity.class);
+        in.putExtra("log",log);
+        mContext.startActivity(in);
+        mContext.finish();
+    }
+
     //Metodos de la classe ButtonAdapter, no de la InnerClass MyOnClickListener
     private void timeControl() {
 
-        if((time_end - time_start) > time){
+        if ((time_end - time_start) > time) {
             Toast.makeText(mContext, "Time Expired", Toast.LENGTH_SHORT).show();
             Intent in = new Intent(mContext, ResultsActivity.class);
             mContext.startActivity(in);
             mContext.finish();
 
-        }else{
+        } else {
 
             timeView.setText("Time: " + (time_end - time_start));
             time_start = time_end;
@@ -745,7 +787,7 @@ public class ButtonAdapter extends BaseAdapter implements Serializable {
         }
     }
 
-    private void countTotal(){
+    private void countTotal() {
         nEmpty = 0;
         nWhite = 0;
         nBlack = 0;
@@ -758,11 +800,11 @@ public class ButtonAdapter extends BaseAdapter implements Serializable {
 
     private void selectCounter(Integer integer) {
         if (integer == 0 || integer == 1) {
-            nEmpty+=1;
-        }else if(integer == 2){
-            nWhite+=1;
-        }else{
-            nBlack+=1;
+            nEmpty += 1;
+        } else if (integer == 2) {
+            nWhite += 1;
+        } else {
+            nBlack += 1;
         }
     }
 }

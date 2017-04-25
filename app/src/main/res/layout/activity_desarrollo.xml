@@ -18,14 +18,14 @@
             android:id="@+id/BlocksLeft"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Caselles pendents"
+            android:text="@string/caselles"
             android:drawableRight="@drawable/time2"
             android:gravity="center"/>
         <TextView
             android:id="@+id/TimeCounter"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Time Left: 25"
+            android:text="@string/timeleft"
             android:gravity="right"/>
     </LinearLayout>
 
@@ -42,7 +42,7 @@
         android:id="@+id/Contador"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TU: 2; OPONENT: 2"
+        android:text="@string/tuyoponente"
         android:gravity="center"/>
 
 </LinearLayout>

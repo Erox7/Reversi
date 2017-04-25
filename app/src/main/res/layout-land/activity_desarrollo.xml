@@ -18,7 +18,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Caselles pendents"
+            android:text="@string/caselles"
             android:drawableRight="@drawable/time2"
             android:layout_gravity="left"
             android:gravity="left"/>
@@ -29,12 +29,12 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="left"
-            android:text="TU: 2; OPONENT: 2" />
+            android:text="@string/tuyoponente" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Time Left: 25"
+            android:text="@string/timeleft"
             android:layout_marginRight="20dp"
             android:gravity="right" />
     </LinearLayout>

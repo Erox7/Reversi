@@ -31,7 +31,7 @@ public class DesarrolloActivity extends AppCompatActivity {
             TextView emptyFields = (TextView) findViewById(R.id.BlocksLeft);
             TextView contadorView = (TextView) findViewById(R.id.Contador);
 
-            this.BA = new ButtonAdapter(this, numCols, timeView, emptyFields, contadorView, (System.currentTimeMillis() / 1000), count_timer,0,0);
+            this.BA = new ButtonAdapter(this, numCols, timeView, emptyFields, contadorView, (System.currentTimeMillis() / 1000), count_timer,0,0, Alias);
             gridview.setAdapter(BA);
         }else{
             BA = (ButtonAdapter) savedInstanceState.getSerializable("ButtonAdapter");
