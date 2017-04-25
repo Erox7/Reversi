@@ -1,4 +1,4 @@
-#Tue Apr 25 10:53:27 CEST 2017
+#Tue Apr 25 16:04:11 CEST 2017
 base.0=D\:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_9
 renamed.0=classes.dex
 file.0=D\:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_9\\classes.dex

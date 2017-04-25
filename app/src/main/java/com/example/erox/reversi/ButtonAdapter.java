@@ -170,12 +170,11 @@ public class ButtonAdapter extends BaseAdapter implements Serializable {
             //position in Array mController = [position / cols][pos % cols]
             int fila = position / nCols;
             int columna = position % nCols;
-            mController.positions[fila][columna] = 2;
 
+            mController.positions[fila][columna] = 2;
             searchHorizontal(fila, columna);
             searchVertical(fila, columna);
             searchDiagonals(fila, columna);
-
             //Actualitzar els posibles moviments, primer borren els vells
             resetPosibleMoves();
 
@@ -191,100 +190,40 @@ public class ButtonAdapter extends BaseAdapter implements Serializable {
         }
 
 
-        private void posibleDiagonalMoves() {
-            boolean ntrovada;
-            //diagonals
-            for (int x = 0; x < nCols; x++) {//posiblesa diagonal dal baix esquerra-dreta
-                for (int y = 0; y < nCols; y++) {
-                    if (mController.positions[x][y] == 2) {
-                        ntrovada = false;
-                        for (int i = 1; i < nCols; i++) {//diagonal dal baix esquerra-dreta
-                            if (x + i < nCols && y + i < nCols) {//mirem si existeix la posicio
-                                if (mController.positions[x + i][y + i] == 3) {
-                                    ntrovada = true;
-                                } else if (mController.positions[x + i][y + i] == 0 && ntrovada == true) {
-                                    mController.positions[x + i][y + i] = 1;
-                                    break;
-                                } else if (mController.positions[x + i][y + i] == 1 && ntrovada == true) {
-                                    break;
-                                }
-                            }
-                        }
-                        ntrovada = false;
-                        for (int i = 1; i < nCols; i++) {//dreta esquerra baix-dal
-                            if (x - i >= 0 && y - i >= 0) {//mirem si existeix la posicio
-                                if (mController.positions[x - i][y - i] == 3) {
-                                    ntrovada = true;
-                                } else if (mController.positions[x - i][y - i] == 0 && ntrovada == true) {
-                                    mController.positions[x - i][y - i] = 1;
-                                    break;
-                                } else if (mController.positions[x - i][y - i] == 1 && ntrovada == true) {
-                                    break;
-                                }
-                            }
-                        }
-                        ntrovada = false;
-                        for (int i = 1; i < nCols; i++) {//dreta esquerra dal-baix
-                            if (x - i >= 0 && y + i < nCols) {//mirem si existeix la posicio
-                                if (mController.positions[x - i][y + i] == 3) {
-                                    ntrovada = true;
-                                } else if (mController.positions[x - i][y + i] == 0 && ntrovada == true) {
-                                    mController.positions[x - i][y + i] = 1;
-                                    break;
-                                } else if (mController.positions[x - i][y + i] == 1 && ntrovada == true) {
-                                    break;
-                                }
-                            }
-                        }
-                        ntrovada = false;
-                        for (int i = 1; i < nCols; i++) {// esquerra-dreta baix-dal
-                            if (x + i < nCols && y - i >= 0) {//mirem si existeix la posicio
-                                if (mController.positions[x + i][y - i] == 3) {
-                                    ntrovada = true;
-                                } else if (mController.positions[x + i][y - i] == 0 && ntrovada == true) {
-                                    mController.positions[x + i][y - i] = 1;
-                                    break;
-                                } else if (mController.positions[x + i][y - i] == 1 && ntrovada == true) {
-                                    break;
-                                }
-                            }
-                        }
-                    }
-                }
-
-            }
-        }
-
         private void posibleMoveVertical() {
             boolean ntrovada;
             ntrovada = false;
             for (int x = 0; x < nCols; x++) {//posiblesa vertical
                 for (int y = 0; y < nCols; y++) {
                     if (mController.positions[x][y] == 2) {
-                        if(mController.positions[x + 1][y] == 3) {
-                            for (int i = x; i < nCols; i++) {//buscan dal-baix
-                                if (mController.positions[i][y] == 3) {
-                                    ntrovada = true;
-                                } else if (mController.positions[i][y] == 0 && ntrovada == true) {
-                                    mController.positions[i][y] = 1;
-                                    break;
-                                } else if (mController.positions[i][y] == 1 && ntrovada == true) {
-                                    break;
-                                }
+                        //if(x+1 < nCols && mController.positions[x + 1][y] == 3) {
+                        for (int i = x; i < nCols; i++) {//buscan dal-baix
+                            if (mController.positions[i][y] == 3) {
+                                ntrovada = true;
+                            } else if (mController.positions[i][y] == 0 && ntrovada == true && i > 0 && mController.positions[i-1][y] == 3) {
+                                mController.positions[i][y] = 1;
+                                break;
+                            } else if (mController.positions[i][y] == 0 && ntrovada == false){//si despres de la blanca hiha un espai buit pasem
+                                break;
+                            } else if (mController.positions[i][y] == 1 ) {
+                                break;
                             }
+                            //}
                         }
                         ntrovada = false;
-                        if(x > 0 && mController.positions[x - 1][y] == 3) {
-                            for (int i = x; i >= 0; i--) {//buscan baix-dal
-                                if (mController.positions[i][y] == 3) {
-                                    ntrovada = true;
-                                } else if (mController.positions[i][y] == 0 && ntrovada == true) {
-                                    mController.positions[i][y] = 1;
-                                    break;
-                                } else if (mController.positions[i][y] == 1 && ntrovada == true) {
-                                    break;
-                                }
+                        //if(x > 0 && mController.positions[x - 1][y] == 3) {
+                        for (int i = x; i >= 0; i--) {//buscan baix-dal
+                            if (mController.positions[i][y] == 3) {
+                                ntrovada = true;
+                            } else if (mController.positions[i][y] == 0 && ntrovada == true && i+1 < nCols && mController.positions[i+1][y] == 3) {
+                                mController.positions[i][y] = 1;
+                                break;
+                            } else if (mController.positions[i][y] == 0 && ntrovada == false){
+                                break;
+                            } else if (mController.positions[i][y] == 1 ) {
+                                break;
                             }
+                            //}
                         }
                         ntrovada = false;
 
@@ -302,10 +241,12 @@ public class ButtonAdapter extends BaseAdapter implements Serializable {
                             for (int i = y; i < nCols; i++) {//buscan cap a dreta
                                 if (mController.positions[x][i] == 3) {
                                     ntrovada = true;
-                                } else if (mController.positions[x][i] == 0 && ntrovada == true) {
+                                } else if (mController.positions[x][i] == 0 && ntrovada == true && i > 0 && mController.positions[x][i-1] == 3) {
                                     mController.positions[x][i] = 1;
                                     break;
-                                } else if (mController.positions[x][i] == 1 && ntrovada == true) {
+                                } else if (mController.positions[x][i] == 0 && ntrovada == false){
+                                    break;
+                                } else if (mController.positions[x][i] == 1 ) {
                                     break;
                                 }
                             }
@@ -316,10 +257,12 @@ public class ButtonAdapter extends BaseAdapter implements Serializable {
                             for (int i = y; i >= 0; i--) {//buscan cap a esquerra
                                 if (mController.positions[x][i] == 3) {
                                     ntrovada = true;
-                                } else if (mController.positions[x][i] == 0 && ntrovada == true) {
+                                } else if (mController.positions[x][i] == 0 && ntrovada == true && i+1 < nCols && mController.positions[x][i+1] == 3) {
                                     mController.positions[x][i] = 1;
                                     break;
-                                } else if (mController.positions[x][i] == 1 && ntrovada == true) {
+                                } else if (mController.positions[x][i] == 0 && ntrovada == false){
+                                    break;
+                                } else if (mController.positions[x][i] == 1 ) {
                                     break;
                                 }
                             }
@@ -328,6 +271,77 @@ public class ButtonAdapter extends BaseAdapter implements Serializable {
 
                     }
                 }
+            }
+        }
+        private void posibleDiagonalMoves() {
+            boolean ntrovada;
+            //diagonals
+            for (int x = 0; x < nCols; x++) {//posiblesa diagonal dal baix esquerra-dreta
+                for (int y = 0; y < nCols; y++) {
+                    if (mController.positions[x][y] == 2) {
+                        ntrovada = false;
+                        for (int i = 1; i < nCols; i++) {//diagonal dal baix esquerra-dreta
+                            if (x + i < nCols && y + i < nCols) {//mirem si existeix la posicio
+                                if (mController.positions[x + i][y + i] == 3) {
+                                    ntrovada = true;
+                                } else if (mController.positions[x + i][y + i] == 0 && ntrovada == true && i > 0 && mController.positions[x + i-1][y + i - 1] == 3){
+                                    mController.positions[x + i][y + i] = 1;
+                                    break;
+                                } else if (mController.positions[x + i][y + i] == 0 && ntrovada == false){
+                                    break;
+                                } else if (mController.positions[x + i][y + i] == 1 ) {
+                                    break;
+                                }
+                            }
+                        }
+                        ntrovada = false;
+                        for (int i = 1; i < nCols; i++) {//dreta esquerra baix-dal
+                            if (x - i >= 0 && y - i >= 0) {//mirem si existeix la posicio
+                                if (mController.positions[x - i][y - i] == 3) {
+                                    ntrovada = true;
+                                } else if (mController.positions[x - i][y - i] == 0 && ntrovada == true && i+1 < nCols && mController.positions[x - i+1][y - i + 1] == 3) {
+                                    mController.positions[x - i][y - i] = 1;
+                                    break;
+                                } else if (mController.positions[x - i][y - i] == 0 && ntrovada == false){
+                                    break;
+                                } else if (mController.positions[x - i][y - i] == 1 ) {
+                                    break;
+                                }
+                            }
+                        }
+                        ntrovada = false;
+                        for (int i = 1; i < nCols; i++) {//dreta esquerra dal-baix
+                            if (x - i >= 0 && y + i < nCols) {//mirem si existeix la posicio
+                                if (mController.positions[x - i][y + i] == 3) {
+                                    ntrovada = true;
+                                } else if (mController.positions[x - i][y + i] == 0 && ntrovada == true && i+1 < nCols && i > 0 && mController.positions[x - i+1][y + i-1] == 3) {
+                                    mController.positions[x - i][y + i] = 1;
+                                    break;
+                                } else if (mController.positions[x - i][y + i] == 0 && ntrovada == false){
+                                    break;
+                                } else if (mController.positions[x - i][y + i] == 1 ) {
+                                    break;
+                                }
+                            }
+                        }
+                        ntrovada = false;
+                        for (int i = 1; i < nCols; i++) {// esquerra-dreta baix-dal
+                            if (x + i < nCols && y - i >= 0) {//mirem si existeix la posicio
+                                if (mController.positions[x + i][y - i] == 3) {
+                                    ntrovada = true;
+                                } else if (mController.positions[x + i][y - i] == 0 && ntrovada == true && i+1 < nCols && i > 0 && mController.positions[x + i-1][y - i+1] == 3) {
+                                    mController.positions[x + i][y - i] = 1;
+                                    break;
+                                } else if (mController.positions[x + i][y - i] == 0 && ntrovada == false){
+                                    break;
+                                } else if (mController.positions[x + i][y - i] == 1 ) {
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+
             }
         }
 
@@ -354,9 +368,11 @@ public class ButtonAdapter extends BaseAdapter implements Serializable {
 
 
         private void searchDiagonals(int fila, int columna) {
-            for (int x = 1; x < nCols - 1; x++) {//Sud Est
-                if (nCols > columna + x && nCols > fila + x) {
-                    if(mController.positions[fila + 1][columna + 1] == 3) {
+
+
+            if((fila + 1)  < nCols && (columna + 1) < nCols && mController.positions[fila + 1][columna + 1] == 3) {
+                for (int x = 0; x < nCols - 1; x++) {//Sud Est
+                     if (nCols > columna + x && nCols > fila + x) {
                         if (mController.positions[fila + x][columna + x] == 2) {
                             int tmpfila = fila + x;
                             int tmpcolumna = columna + x;
@@ -365,15 +381,15 @@ public class ButtonAdapter extends BaseAdapter implements Serializable {
                                 tmpfila--;
                                 tmpcolumna--;
                             }
-
+                        }else if(mController.positions[fila + x][columna + x] == 0 || mController.positions[fila + x][columna + x] == 1){
+                            break;
                         }
                     }
                 }
             }
-
-            for (int x = 1; x < nCols - 1; x++) {//Sud Oest
-                if (0 < columna - x && nCols > fila + x) {
-                    if (mController.positions[fila + 1][columna - 1 ] == 3) {
+            if (nCols > (fila + 1) && 0 < columna && mController.positions[fila + 1][columna - 1 ] == 3) {
+             for (int x = 0; x < nCols - 1; x++) {//Sud Oest
+                    if (0 <= columna - x && nCols > fila + x) {
                         if (mController.positions[fila + x][columna - x] == 2) {
                             int tmpfila = fila + x;
                             int tmpcolumna = columna - x;
@@ -382,15 +398,16 @@ public class ButtonAdapter extends BaseAdapter implements Serializable {
                                 tmpfila--;
                                 tmpcolumna++;
                             }
+                        }else if(mController.positions[fila + x][columna - x] == 0 || mController.positions[fila + x][columna - x] == 1){
+                            break;
                         }
 
                     }
                 }
             }
-
-            for (int x = 1; x < nCols - 1; x++) {//Nord Est
-                if (nCols > columna + x && 0 < fila - x) {
-                    if (mController.positions[fila - 1][columna + 1 ] == 3) {
+            if (fila > 0 && nCols > (columna + 1) && mController.positions[fila - 1][columna + 1 ] == 3) {
+                for (int x = 0; x < nCols; x++) {//Nord Est
+                    if (nCols > columna + x && 0 <= fila - x) {
                         if (mController.positions[fila - x][columna + x] == 2) {
                             int tmpfila = fila - x;
                             int tmpcolumna = columna + x;
@@ -399,14 +416,16 @@ public class ButtonAdapter extends BaseAdapter implements Serializable {
                                 tmpfila++;
                                 tmpcolumna--;
                             }
+                        }else if(mController.positions[fila - x][columna + x] == 0 || mController.positions[fila - x][columna + x] == 1){
+                            break;
                         }
 
                     }
                 }
             }
-            for (int x = 1; x < nCols - 1; x++) {//Nord Oest
-                if (0< columna - x && 0 < fila - x) {
-                    if(mController.positions[fila - 1][columna - 1] == 3) {
+            if(fila > 0 && columna > 0 && mController.positions[fila - 1][columna - 1] == 3) {
+                for (int x = 0; x < nCols - 1; x++) {//Nord Oest
+                    if (0 <= columna - x && 0 <= fila - x) {
                         if (mController.positions[fila - x][columna - x] == 2) {
                             int tmpfila = fila - x;
                             int tmpcolumna = columna - x;
@@ -415,6 +434,8 @@ public class ButtonAdapter extends BaseAdapter implements Serializable {
                                 tmpfila++;
                                 tmpcolumna++;
                             }
+                        }else if(mController.positions[fila - x][columna - x] == 0 || mController.positions[fila - x][columna - x] == 1){
+                            break;
                         }
                     }
                 }
@@ -422,24 +443,28 @@ public class ButtonAdapter extends BaseAdapter implements Serializable {
         }
 
         private void searchVertical(int fila, int columna) {
-            for (int x = 0; x < nCols - 1; x++) {//VERTICAL DAL-BAIX
-                if ((nCols - 1) > fila + x) {//&& 0 <= (position + x) % nCols) {
-                    if(mController.positions[fila + 1][columna] == 3) {
+            if((fila + 1 ) < nCols && mController.positions[fila + 1][columna] == 3) {
+                for (int x = 0; x < nCols; x++) {//SUD
+                    if (nCols > fila + x) {
                         if (mController.positions[fila + x][columna] == 2) {
                             for (int y = fila; y < fila + x; y++) {
                                 mController.positions[y][columna] = 2;
                             }
+                        }else if(mController.positions[fila + x][columna] == 0 || mController.positions[fila + x][columna] == 1){
+                            break;
                         }
                     }
                 }
             }
-            for (int x = 0; x < nCols - 1; x++) {//VERTICAL baix-dal
-                if (0 < fila - x) {//&& 0 <= (position + x) % nCols) {
-                    if(mController.positions[fila - 1][columna] == 3) {
+            if(fila > 0 && mController.positions[fila - 1][columna] == 3) {
+                for (int x = 0; x < nCols; x++) {//NORD
+                    if (0 <= fila - x) {
                         if (mController.positions[fila - x][columna] == 2) {
                             for (int y = fila; y > fila - x; y--) {
                                 mController.positions[y][columna] = 2;
                             }
+                        }else if(mController.positions[fila - x][columna] == 0 || mController.positions[fila - x][columna] == 1){
+                             break;
                         }
                     }
                 }
@@ -448,25 +473,28 @@ public class ButtonAdapter extends BaseAdapter implements Serializable {
         }
 
         private void searchHorizontal(int fila, int columna) {
-            for (int x = 0; x < nCols - 1; x++) {//horitzontal dreta
-                if (nCols - 1> columna + x) {//&& 0 <= (position + x) % nCols) {
-                    if(mController.positions[fila][columna + 1] == 3) {
+            if((columna + 1) < nCols && mController.positions[fila][columna + 1] == 3) {
+                for (int x = 0; x < nCols; x++) {//EST
+                    if (nCols > columna + x) {
                         if (mController.positions[fila][columna + x] == 2) {
                             for (int y = columna; y < columna + x; y++) {
                                 mController.positions[fila][y] = 2;
                             }
+                        }else if(mController.positions[fila][columna + x] == 0 || mController.positions[fila][columna + x] == 1){
+                            break;
                         }
                     }
                 }
             }
-
-            for (int x = 0; x < nCols -1; x++) {//horitzontal ESQUERRA
-                if (0 < columna - x) {
-                    if(mController.positions[fila][columna - 1] == 3) {
+            if(columna > 0 && mController.positions[fila][columna - 1] == 3) {
+                for (int x = 0; x < nCols -1; x++) {//OEST
+                    if (0 <= columna - x) {
                         if (mController.positions[fila][columna - x] == 2) {
                             for (int y = columna; y > columna - x; y--) {
                                 mController.positions[fila][y] = 2;
                             }
+                        }else if(mController.positions[fila][columna - x] == 0 || mController.positions[fila][columna - x] == 1){
+                            break;
                         }
                     }
                 }
