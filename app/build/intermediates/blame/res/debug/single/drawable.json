@@ -1,19 +1,19 @@
 [
     {
-        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_check_material.xml",
-        "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable\\abc_btn_check_material.xml"
-    },
-    {
         "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\button_white.png",
         "source": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\src\\main\\res\\drawable\\button_white.png"
     },
     {
-        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\mail.png",
-        "source": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\src\\main\\res\\drawable\\mail.png"
+        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_check_material.xml",
+        "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable\\abc_btn_check_material.xml"
     },
     {
         "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_material.xml",
         "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable\\abc_ratingbar_material.xml"
+    },
+    {
+        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\mail.png",
+        "source": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\src\\main\\res\\drawable\\mail.png"
     },
     {
         "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\button_posible.png",
@@ -22,6 +22,10 @@
     {
         "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\riven.png",
         "source": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\src\\main\\res\\drawable\\riven.png"
+    },
+    {
+        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\appicon.png",
+        "source": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\src\\main\\res\\drawable\\appicon.png"
     },
     {
         "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\menu.png",
@@ -92,16 +96,16 @@
         "source": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\src\\main\\res\\drawable\\time.png"
     },
     {
-        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\persona.png",
-        "source": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\src\\main\\res\\drawable\\persona.png"
+        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_tick_mark_material.xml",
+        "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable\\abc_seekbar_tick_mark_material.xml"
     },
     {
         "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_borderless_material.xml",
         "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable\\abc_btn_borderless_material.xml"
     },
     {
-        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_tick_mark_material.xml",
-        "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable\\abc_seekbar_tick_mark_material.xml"
+        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\persona.png",
+        "source": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\src\\main\\res\\drawable\\persona.png"
     },
     {
         "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_voice_search_api_material.xml",

@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:2:1-47:12
+ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:2:1-43:12
 	package
 		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:3:5-39
 		INJECTED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml
@@ -40,7 +40,7 @@ ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest
 	android:name
 		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:8:22-64
 application
-ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:9:5-45:19
+ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:9:5-41:19
 MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\Erox\.android\build-cache\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\output\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-v4:25.2.0] C:\Users\Erox\.android\build-cache\2b529dc8a3aaea56530bf69077de12c2ede6cf52\output\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\Erox\.android\build-cache\8809599ccb6b2dcc94faa08c2242b125c6e78656\output\AndroidManifest.xml:25:5-20
@@ -64,7 +64,7 @@ ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest
 	android:label
 		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:17:13-36
 	android:icon
-		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:16:13-43
+		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:16:13-45
 	android:name
 		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:15:13-41
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
@@ -78,44 +78,36 @@ ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest
 	android:name
 		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:21:27-74
 activity#com.example.erox.reversi.HelpActivity
-ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:24:9-27:37
+ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:24:9-26:37
 	android:label
-		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:27:13-34
-	android:icon
-		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:26:13-42
+		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:26:13-34
 	android:name
 		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:25:13-41
 activity#com.example.erox.reversi.ConfigActivity
-ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:28:9-31:45
+ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:27:9-29:45
 	android:label
-		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:31:13-42
-	android:icon
-		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:30:13-41
+		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:29:13-42
 	android:name
-		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:29:13-43
+		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:28:13-43
 activity#com.example.erox.reversi.DesarrolloActivity
-ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:33:9-35:41
+ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:31:9-32:41
+	android:label
+		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:32:13-39
+	android:name
+		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:31:19-53
+activity#com.example.erox.reversi.ResultsActivity
+ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:34:9-40:20
 	android:label
 		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:35:13-39
-	android:icon
-		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:34:13-41
 	android:name
-		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:33:19-53
-activity#com.example.erox.reversi.ResultsActivity
-ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:37:9-44:20
-	android:label
-		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:39:13-39
-	android:icon
-		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:38:13-41
-	android:name
-		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:37:19-50
+		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:34:19-50
 intent-filter#android.intent.action.SEND+android.intent.category.DEFAULT
-ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:40:13-43:29
+ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:36:13-39:29
 action#android.intent.action.SEND
-ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:41:17-69
+ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:37:17-69
 	android:name
-		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:41:25-66
+		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:37:25-66
 category#android.intent.category.DEFAULT
-ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:42:17-76
+ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:38:17-76
 	android:name
-		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:42:27-73
+		ADDED from D:\Android\AndroidStudioProjects\Reversi\app\src\main\AndroidManifest.xml:38:27-73

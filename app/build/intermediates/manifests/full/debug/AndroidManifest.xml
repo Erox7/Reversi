@@ -17,7 +17,7 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.example.erox.reversi.MainActivity"
-            android:icon="@drawable/riven"
+            android:icon="@drawable/appicon"
             android:label="Reversi" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,19 +27,15 @@
         </activity>
         <activity
             android:name="com.example.erox.reversi.HelpActivity"
-            android:icon="@drawable/ahri"
             android:label="AYUDA" />
         <activity
             android:name="com.example.erox.reversi.ConfigActivity"
-            android:icon="@drawable/set"
             android:label="CONFIGURACION" />
         <activity
             android:name="com.example.erox.reversi.DesarrolloActivity"
-            android:icon="@drawable/set"
             android:label="DESARROLLO" />
         <activity
             android:name="com.example.erox.reversi.ResultsActivity"
-            android:icon="@drawable/set"
             android:label="RESULTADOS" >
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />

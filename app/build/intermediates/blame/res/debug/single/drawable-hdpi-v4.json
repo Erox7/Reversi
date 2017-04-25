@@ -1,11 +1,11 @@
 [
     {
-        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png",
-        "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
-    },
-    {
         "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_textfield_default_mtrl_alpha.9.png",
         "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable-hdpi-v4\\abc_textfield_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png",
+        "source": "C:\\Users\\Erox\\.android\\build-cache\\0f3d1747a6d423158d4aa6e31ce3eee100cb766e\\output\\res\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
     },
     {
         "merged": "D:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png",
