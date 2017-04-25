@@ -2,7 +2,10 @@
  * Created by Erox on 22/04/2017.
  */
 package com.example.erox.reversi;
-public class MoveController {
+
+import java.io.Serializable;
+
+public class MoveController{
     public Integer[][] positions;
     private int cols;
 
@@ -13,10 +16,10 @@ public class MoveController {
 
     private Integer[][] sixcols = new Integer[][]{{0,0,0,0,0,0},
                                                   {0,0,0,1,0,0},
-                                                  {0,1,2,1,3,0},
-                                                  {0,1,3,2,3,2},
-                                                  {0,2,1,2,0,2},
-                                                  {1,0,0,0,0,0}};
+                                                  {0,0,2,3,1,0},
+                                                  {0,1,3,2,0,0},
+                                                  {0,0,1,0,0,0},
+                                                  {0,0,0,0,0,0}};
 
     private Integer[][] eightcols = new Integer[][]{{0,0,0,0,0,0,0,0},
                                                      {0,0,0,0,0,0,0,0},

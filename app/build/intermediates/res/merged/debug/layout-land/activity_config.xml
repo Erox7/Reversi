@@ -69,6 +69,7 @@
         android:layout_height="wrap_content"
         android:text="Control de Temps"
         android:layout_marginLeft="20dp"/>
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -80,14 +81,14 @@
             android:layout_height="43dp"
             android:src="@drawable/time" />
 
-        <EditText
-            android:id="@+id/editTime"
+        <CheckBox
+            android:id="@+id/checkbox"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:hint="@string/cntrlTime" />
+            android:layout_height="match_parent" />
     </LinearLayout>
 
     <Button
+        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/StartButton2"

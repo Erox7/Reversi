@@ -12,11 +12,13 @@ import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.Serializable;
+
 /**
  * Created by Erox on 20/04/2017.
  */
 
-public class ButtonAdapter extends BaseAdapter {
+public class ButtonAdapter extends BaseAdapter implements Serializable {
     private final long time_start_activity;
     private Activity mContext;
     private int count;
@@ -87,16 +89,23 @@ public class ButtonAdapter extends BaseAdapter {
             int fila = position / nCols;
             int columna = position % nCols;
             decideButton(position,bn,fila,columna);
-            contadorView.setText("Tu:" + nWhite +" ; "+ "Oponent: " + nBlack);
+
         } else {
 
             bn = (Button) convertView;
             int fila = position / nCols;
             int columna = position % nCols;
             decideButton(position,bn,fila,columna);
-            contadorView.setText("Tu:" + nWhite +" ; "+ "Oponent: " + nBlack);
         }
+        if(position == (getCount() - 1)){
+            if(time_counter) {
+                time_end = (System.currentTimeMillis() / 1000);
+                timeControl();
+                countTotal();
+                contadorView.setText("Tu:" + nWhite +" ; "+ "Oponent: " + nBlack);
+            }
 
+        }
         return bn;
     }
 
@@ -133,6 +142,7 @@ public class ButtonAdapter extends BaseAdapter {
             }
 
     }
+
 
     private class MyOnClickListener implements View.OnClickListener {
         private final int position;
@@ -180,21 +190,6 @@ public class ButtonAdapter extends BaseAdapter {
             notifyDataSetChanged();
         }
 
-        private void timeControl() {
-
-            if((time_end - time_start) > time){
-                Toast.makeText(mContext, "Time Expired", Toast.LENGTH_SHORT).show();
-                Intent in = new Intent(mContext, ResultsActivity.class);
-                mContext.startActivity(in);
-                mContext.finish();
-
-            }else{
-
-                timeView.setText("Time: " + (time_end - time_start));
-                time_start = time_end;
-
-            }
-        }
 
         private void posibleDiagonalMoves() {
             boolean ntrovada;
@@ -357,26 +352,6 @@ public class ButtonAdapter extends BaseAdapter {
             return false;
         }
 
-        private void countTotal(){
-            nEmpty = 0;
-            nWhite = 0;
-            nBlack = 0;
-            for (int x = 0; x < nCols; x++) {
-                for (int y = 0; y < nCols; y++) {
-                    selectCounter(mController.positions[x][y]);
-                }
-            }
-        }
-
-        private void selectCounter(Integer integer) {
-            if (integer == 0 || integer == 1) {
-                nEmpty+=1;
-            }else if(integer == 2){
-                nWhite+=1;
-            }else{
-                nBlack+=1;
-            }
-        }
 
         private void searchDiagonals(int fila, int columna) {
             for (int x = 1; x < nCols - 1; x++) {//Sud Est
@@ -496,6 +471,43 @@ public class ButtonAdapter extends BaseAdapter {
                     }
                 }
             }
+        }
+    }
+    //Metodos de la classe ButtonAdapter, no de la InnerClass MyOnClickListener
+    private void timeControl() {
+
+        if((time_end - time_start) > time){
+            Toast.makeText(mContext, "Time Expired", Toast.LENGTH_SHORT).show();
+            Intent in = new Intent(mContext, ResultsActivity.class);
+            mContext.startActivity(in);
+            mContext.finish();
+
+        }else{
+
+            timeView.setText("Time: " + (time_end - time_start));
+            time_start = time_end;
+
+        }
+    }
+
+    private void countTotal(){
+        nEmpty = 0;
+        nWhite = 0;
+        nBlack = 0;
+        for (int x = 0; x < nCols; x++) {
+            for (int y = 0; y < nCols; y++) {
+                selectCounter(mController.positions[x][y]);
+            }
+        }
+    }
+
+    private void selectCounter(Integer integer) {
+        if (integer == 0 || integer == 1) {
+            nEmpty+=1;
+        }else if(integer == 2){
+            nWhite+=1;
+        }else{
+            nBlack+=1;
         }
     }
 }

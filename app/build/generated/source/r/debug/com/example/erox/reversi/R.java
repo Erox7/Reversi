@@ -2303,10 +2303,10 @@ containing a value of this type.
         public static final int time2=0x7f02006e;
     }
     public static final class id {
-        public static final int BlocksLeft=0x7f0b0068;
-        public static final int Contador=0x7f0b006b;
+        public static final int BlocksLeft=0x7f0b0067;
+        public static final int Contador=0x7f0b006a;
         public static final int RadioGroup=0x7f0b0061;
-        public static final int TimeCounter=0x7f0b0069;
+        public static final int TimeCounter=0x7f0b0068;
         public static final int action0=0x7f0b0075;
         public static final int action_bar=0x7f0b004f;
         public static final int action_bar_activity_content=0x7f0b0000;
@@ -2344,28 +2344,27 @@ containing a value of this type.
         public static final int contentPanel=0x7f0b0039;
         public static final int custom=0x7f0b0040;
         public static final int customPanel=0x7f0b003f;
+        public static final int dayHour=0x7f0b006f;
         public static final int decor_content_parent=0x7f0b004d;
         public static final int default_activity_button=0x7f0b0032;
         public static final int disableHome=0x7f0b0015;
         public static final int editText=0x7f0b005f;
-        public static final int editText2=0x7f0b0071;
-        public static final int editTime=0x7f0b0067;
         public static final int edit_query=0x7f0b0051;
         public static final int eight=0x7f0b0062;
-        public static final int emailEditText=0x7f0b0070;
+        public static final int emailEditText=0x7f0b0071;
         public static final int end=0x7f0b0023;
         public static final int end_padder=0x7f0b0088;
         public static final int exit=0x7f0b006e;
         public static final int expand_activities_button=0x7f0b0030;
         public static final int expanded_menu=0x7f0b0045;
         public static final int four=0x7f0b0064;
-        public static final int gridView=0x7f0b006a;
+        public static final int gridView=0x7f0b0069;
         public static final int help=0x7f0b006c;
         public static final int home=0x7f0b0004;
         public static final int homeAsUp=0x7f0b0016;
         public static final int icon=0x7f0b0034;
         public static final int icon_group=0x7f0b0083;
-        public static final int idLog=0x7f0b006f;
+        public static final int idLog=0x7f0b0070;
         public static final int ifRoom=0x7f0b0027;
         public static final int image=0x7f0b0031;
         public static final int imageTime=0x7f0b0065;
@@ -2429,6 +2428,7 @@ containing a value of this type.
         public static final int textSpacerNoButtons=0x7f0b003d;
         public static final int textSpacerNoTitle=0x7f0b003c;
         public static final int textView=0x7f0b0060;
+        public static final int textView2=0x7f0b006b;
         public static final int time=0x7f0b007d;
         public static final int title=0x7f0b0035;
         public static final int titleDividerNoCustom=0x7f0b0044;

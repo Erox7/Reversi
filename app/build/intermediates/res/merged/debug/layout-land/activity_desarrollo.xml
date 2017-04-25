@@ -13,28 +13,39 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center">
+        android:orientation="horizontal">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Caselles pendents                  "
+            android:text="Caselles pendents"
             android:drawableRight="@drawable/time2"
-            android:gravity="center"/>
+            android:layout_gravity="left"
+            android:gravity="left"/>
+
         <TextView
+            android:id="@+id/textView2"
+            android:layout_marginLeft="70dp"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="                               Time Left"
-            android:gravity="center"/>
-    </LinearLayout>
-    <GridLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-    </GridLayout>
+            android:gravity="left"
+            android:text="TU: 2; OPONENT: 2" />
 
-    <TextView
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Time Left: 25"
+            android:layout_marginRight="20dp"
+            android:gravity="right" />
+    </LinearLayout>
+
+    <GridView
+        android:id="@+id/gridView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TU: X; OPONENT: Y"
-        android:gravity="center"/>
+        android:layout_height="match_parent"
+        android:columnWidth="100dp"
+        android:numColumns="auto_fit"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="0dp"></GridView>
 
 </LinearLayout>

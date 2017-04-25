@@ -1,4 +1,4 @@
-#Mon Apr 24 23:57:28 CEST 2017
+#Tue Apr 25 10:56:25 CEST 2017
 base.0=D\:\\Android\\AndroidStudioProjects\\Reversi\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_bfcb2754be033140c8d3e6816fbbf7e16a816283
 renamed.1=classes2.dex
 renamed.0=classes.dex
