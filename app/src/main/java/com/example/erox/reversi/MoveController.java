@@ -9,10 +9,10 @@ public class MoveController{
     public Integer[][] positions;
     private int cols;
 
-    private Integer[][] fourcols = new Integer[][]{{0,0,2,3},
-                                                    {1,2,2,3},
-                                                    {1,3,2,3},
-                                                    {3,2,2,3}};
+    private Integer[][] fourcols = new Integer[][]{{0,0,1,0},
+                                                    {0,2,3,1},
+                                                    {1,3,2,0},
+                                                    {0,1,0,0}};
 
     private Integer[][] sixcols = new Integer[][]{
             {0,0,0,0,0,0},

@@ -59,7 +59,7 @@ public class ConfigActivity extends AppCompatActivity implements OnClickListener
             this.et = (EditText) findViewById(R.id.editText);
 
             in.putExtra("CheckKey",cb.isChecked());
-            in.putExtra("Alias", et.getText());
+            in.putExtra("Alias", et.getText().toString());
             in.putExtra("key", RB.getText());
             startActivity(in);
             finish();
